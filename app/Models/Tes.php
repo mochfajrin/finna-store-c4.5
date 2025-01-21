@@ -10,7 +10,7 @@ class Tes extends Model
     use HasFactory;
 
     protected $fillable = [
-        "id_pelamar",
+        "pelamar_id",
         "jenis",
         "deskripsi",
         "nilai",

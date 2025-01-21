@@ -9,7 +9,7 @@ class Pelamar extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_lowongan',
+        'lowongan_id',
         'nama',
         'jenis_kelamin',
         'no_telepon',

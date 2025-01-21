@@ -9,8 +9,8 @@ class Wawancara extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "id_user",
-        "id_pelamar",
+        "user_id",
+        "pelamar_id",
         "nilai",
     ];
     public function user()

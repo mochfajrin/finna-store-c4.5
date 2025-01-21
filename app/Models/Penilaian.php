@@ -9,10 +9,11 @@ class Penilaian extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "nilai"
+        "nilai",
+        "pelamar_id"
     ];
     public function pelamar()
     {
-        return $this->belongsToMany(Pelamar::class);
+        return $this->belongsTo(Pelamar::class);
     }
 }

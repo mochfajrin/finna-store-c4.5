@@ -9,8 +9,8 @@ class Evaluasi extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "id_pelamar",
-        "id_kriteria",
+        "pelamar_id",
+        "kriteria_id",
         "nilai",
     ];
 

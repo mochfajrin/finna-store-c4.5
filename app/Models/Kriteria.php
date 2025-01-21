@@ -9,7 +9,8 @@ class Kriteria extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "judul"
+        "lowongan_id",
+        "judul",
     ];
 
     public function lowongan()

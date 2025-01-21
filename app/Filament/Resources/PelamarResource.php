@@ -18,11 +18,8 @@ class PelamarResource extends Resource
     protected static ?string $model = Pelamar::class;
     protected static ?string $modelLabel = 'Data Pelamar';
     protected static ?string $pluralModelLabel = 'Data Pelamar';
-
     protected static ?string $navigationLabel = 'Data Pelamar';
-
     protected static ?int $navigationSort = 1;
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -57,6 +54,11 @@ class PelamarResource extends Resource
         return [
             //
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return false;
     }
 
     public static function getPages(): array
