@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Lowongan extends Model
 {
@@ -20,5 +21,9 @@ class Lowongan extends Model
     public function kriterias()
     {
         return $this->hasMany(Kriteria::class);
+    }
+    public function getThumbnailUrl()
+    {
+        return Storage::disk('public')->url($this->url_gambar);
     }
 }
