@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LowonganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/about', AboutController::class)->name('about');
-Route::get('/lowongan', HomeController::class)->name('lowongan.index');
+Route::get('/lowongan', LowonganController::class)->name('lowongan.index');
+Route::get("/lowongan/{lowonganId}", [LowonganController::class, "show"])->name('lowongan.show');

@@ -44,22 +44,28 @@
         <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
             <div class="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
                 <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Lowongan Kerja
+                    Terbaru
                 </h2>
             </div>
             <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
                 @foreach ($lowongans as $lowongan)
                     <div
                         class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
+                        <a href="{{ route('lowongan.show', $lowongan->id) }}">
                             <img class="p-8 rounded-t-lg" src="{{ $lowongan->getThumbnailUrl() }}"
                                 alt="product image" />
                         </a>
                         <div class="px-5 pb-5 text-center">
-                            <a href="#">
+                            <a href="{{ route('lowongan.show', $lowongan->id) }}">
                                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                                     {{ $lowongan->judul }}
                                 </h5>
                             </a>
+                            <div class="mt-4 flex items-center">
+                                <a href="{{ route('lowongan.show', $lowongan->id) }}"
+                                    class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Lamar
+                                    Sekarang</a>
+                            </div>
                         </div>
                     </div>
                 @endforeach
