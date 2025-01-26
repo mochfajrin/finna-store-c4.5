@@ -9,7 +9,7 @@ class LowonganController extends Controller
 {
     public function __invoke()
     {
-        $lowongans = Lowongan::get();
+        $lowongans = Lowongan::latest('created_at')->get();
         return view('lowongan.index', [
             'lowongans' => $lowongans
         ]);
