@@ -99,7 +99,7 @@
                     <input
                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                         aria-describedby="foto_help" id="foto" name="url_foto" type="file"
-                        accept="image/*,application/pdf" value="{{ old('url_foto') }}">
+                        accept="image/* ,application/pdf" value="{{ old('url_foto') }}">
                     @error('url_foto')
                         <p class="text-center text-red-700">{{ $message }}</p>
                     @enderror
@@ -151,7 +151,8 @@
                 </div>
                 <div>
                     <button type="submit"
-                        class="bg-[#6A64F1] hover:shadow-form w-full rounded-md  py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                        class="bg-[#6A64F1] hover:shadow-form w-full rounded-md  py-3 px-8 text-center text-base font-semibold text-white outline-none"
+                        style="background-color: #6A64F1">
                         Lamar Pekerjaan
                     </button>
                 </div>

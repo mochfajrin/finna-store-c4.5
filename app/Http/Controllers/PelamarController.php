@@ -58,17 +58,25 @@ class PelamarController extends Controller
 
         $data = [
             'subject' => "Pengerjaan Tes Rekruitmen - $pelamar->nama",
-            'link' => config('app.url') . "/pelamar/test/$encryptedPayload",
+            'link' => config('app.url') . "/lamaran/test/$encryptedPayload",
             'nama' => $pelamar->nama
         ];
         Mail::to($pelamar->email)->send(new SendTestMail($data));
         return redirect("lamaran/mail/$encryptedPayload");
 
     }
+    public function test(Request $request, $encryptedPayload)
+    {
+        $id = (int) Crypt::decryptString($encryptedPayload);
+        $pelamar = Pelamar::where('id', $id)->first();
+        if (!$pelamar) {
+            // return abort(404);
+        }
+        return view("pelamar.color-blind-test");
+    }
     public function checkMailPage(Request $request, string $encryptedPayload)
     {
         try {
-
             $id = (int) Crypt::decryptString($encryptedPayload);
             $pelamar = Pelamar::where('id', $id)->first();
             if (!$pelamar) {
@@ -79,10 +87,7 @@ class PelamarController extends Controller
             return abort(404);
         }
     }
-    public function sendMail()
-    {
 
-    }
     public function storeFile(UploadedFile $file, $path)
     {
         $extension = $file->getExtension();
