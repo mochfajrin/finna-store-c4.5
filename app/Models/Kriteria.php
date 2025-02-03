@@ -23,6 +23,6 @@ class Kriteria extends Model
     }
     public function evaluasi()
     {
-        return $this->belongsTo(Evaluasi::class);
+        return $this->hasOne(Evaluasi::class);
     }
 }

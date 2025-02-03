@@ -49,6 +49,7 @@ class LowonganResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make("id"),
                 ImageColumn::make("url_gambar"),
                 TextColumn::make("judul")->sortable()->searchable(),
             ])

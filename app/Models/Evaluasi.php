@@ -13,7 +13,10 @@ class Evaluasi extends Model
         "kriteria_id",
         "nilai",
     ];
-
+    public function pelamar()
+    {
+        return $this->belongsTo(Pelamar::class);
+    }
     public function wawancara()
     {
         return $this->belongsTo(Wawancara::class);

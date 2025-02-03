@@ -16,9 +16,8 @@ class SendInterviewMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(public $data)
     {
-        //
     }
 
     /**
@@ -27,7 +26,7 @@ class SendInterviewMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Send Interview Mail',
+            subject: $this->data['subject'],
         );
     }
 
@@ -37,7 +36,7 @@ class SendInterviewMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.send_interview',
         );
     }
 

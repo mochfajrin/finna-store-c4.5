@@ -4,8 +4,6 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\PelamarController;
-use App\Mail\SendTestMail;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +23,11 @@ Route::get('/lowongan', LowonganController::class)->name('lowongan.index');
 Route::get("/lowongan/{lowonganId}", [LowonganController::class, "show"])->name('lowongan.show');
 Route::get("/lamaran/{lowongan:id}", [PelamarController::class, "registerForm"])->name('pelamar.form');
 Route::post("/lamaran/{lowonganId}", [PelamarController::class, "register"])->name('pelamar.register');
-Route::get('/lamaran/mail/{encryptedPayload}', [PelamarController::class, 'checkMailPage'])->name('lamaran.mail');
-Route::get('/lamaran/test/{encryptedPayload}', [PelamarController::class, 'test'])->name('lamaran.test  ');
-Route::get("/quiz", function () {
-    return view("pelamar.color-blind-test");
-});
+Route::get('/lamaran/mail/{encryptedPayload}', [PelamarController::class, 'checkMailPage'])->name('pelamar.mail');
+Route::get("/test/buta-warna/{encryptedPayload}", [PelamarController::class, 'colorBlindTest'])->name("pelamar.blind-test");
+Route::get("test/kemampuan/{encryptedPayload}", [PelamarController::class, "abilityTest"])->name("pelamar.ability-test");
+Route::post("/test/buta-warna/store/{encryptedTestPayload}", [PelamarController::class, 'colorBlindTestSubmit'])->name("pelamar.blind-test-submit");
+Route::post("/test/kemampuan/store/{encryptedTestPayload}", [PelamarController::class, 'abilityTestSubmit'])->name("pelamar.ability-test-submit");
+Route::get('thanks', function () {
+    return view('pelamar.thankyou');
+})->name('thanks');

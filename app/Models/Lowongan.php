@@ -16,7 +16,7 @@ class Lowongan extends Model
     ];
     public function pelamar()
     {
-        return $this->hasOne(Pelamar::class);
+        return $this->hasMany(Pelamar::class);
     }
     public function kriterias()
     {
@@ -24,6 +24,7 @@ class Lowongan extends Model
     }
     public function getThumbnailUrl()
     {
-        return Storage::disk('public')->url($this->url_gambar);
+        $isUrl = str_contains($this->url_gambar, 'http');
+        return $isUrl ? $this->url_gambar : Storage::disk('public')->url($this->url_gambar);
     }
 }

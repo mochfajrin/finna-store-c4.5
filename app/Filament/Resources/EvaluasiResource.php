@@ -5,10 +5,16 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\EvaluasiResource\Pages;
 use App\Filament\Resources\EvaluasiResource\RelationManagers;
 use App\Models\Evaluasi;
+use App\Models\Kriteria;
+use App\Models\Pelamar;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -28,7 +34,23 @@ class EvaluasiResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Select::make("pelamar_id")->relationship('pelamar', 'nama')->searchable()->required()->label("Nama Pelamar")
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (string $operation, $state, Set $set) {
+                        $set('lowongan', Pelamar::where("id", $state)->first()->lowongan()->first()->judul);
+                    }),
+                TextInput::make("lowongan")->disabled()->default(function (callable $get) {
+                    return Pelamar::where("id", $get("pelamar_id"))->first()?->lowongan()->first()->judul;
+                }),
+                Select::make("kriteria_id")->relationship('kriteria', 'judul')->searchable()->required()->label("Nama Kriteria")
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (string $operation, $state, Set $set) {
+                        $set('kriteria', Kriteria::where("id", $state)->first()->lowongan()->first()->judul);
+                    }),
+                TextInput::make("kriteria")->disabled()->default(function (callable $get) {
+                    return Kriteria::where("id", $get("pelamar_id"))->first()?->lowongan()->first()->judul;
+                }),
+                TextInput::make("nilai")->numeric()->minValue(0)->maxValue(100)->default(0)
             ]);
     }
 
@@ -36,7 +58,10 @@ class EvaluasiResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make("id")->searchable(),
+                TextColumn::make("pelamar.nama")->searchable(),
+                TextColumn::make('kriteria.judul')->searchable(),
+                TextColumn::make('nilai')
             ])
             ->filters([
                 //

@@ -23,6 +23,10 @@ class Pelamar extends Model
         'url_skck',
         'url_riwayat',
     ];
+    public function lowongan()
+    {
+        return $this->belongsTo(Lowongan::class);
+    }
     public function kriterias()
     {
         return $this->hasMany(Kriteria::class);

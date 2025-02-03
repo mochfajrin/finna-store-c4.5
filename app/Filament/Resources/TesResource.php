@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -36,13 +37,16 @@ class TesResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make("id")->searchable(),
+                TextColumn::make("pelamar.nama")->searchable(),
+                TextColumn::make("pelamar.lowongan.judul")->searchable(),
+                TextColumn::make("jenis")->searchable(),
+                TextColumn::make("nilai")->searchable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -57,7 +61,10 @@ class TesResource extends Resource
             //
         ];
     }
-
+    public static function canCreate(): bool
+    {
+        return false;
+    }
     public static function getPages(): array
     {
         return [

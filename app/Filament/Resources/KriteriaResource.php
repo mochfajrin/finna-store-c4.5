@@ -44,9 +44,9 @@ class KriteriaResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make("id"),
-                TextColumn::make("judul"),
-                TextColumn::make("lowongan.judul"),
+                TextColumn::make("id")->searchable(),
+                TextColumn::make("judul")->searchable(),
+                TextColumn::make("lowongan.judul")->searchable(),
             ])
             ->filters([
                 //

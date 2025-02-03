@@ -12,8 +12,10 @@ class Tes extends Model
     protected $fillable = [
         "pelamar_id",
         "jenis",
-        "deskripsi",
         "nilai",
+        'is_finished',
+        "start_at",
+        "end_at",
     ];
 
     public function pelamar()
