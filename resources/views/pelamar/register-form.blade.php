@@ -73,7 +73,7 @@
                     </label>
                     <input type="email" name="email" id="email" placeholder="Masukkan email"
                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                        value="{{ old('alamat') }}" />
+                        value="{{ old('email') }}" />
                     @error('email')
                         <p class="text-center text-red-700">{{ $message }}</p>
                     @enderror
