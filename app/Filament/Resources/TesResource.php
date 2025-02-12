@@ -23,7 +23,7 @@ class TesResource extends Resource
     protected static ?string $navigationLabel = 'Tes';
 
     protected static ?int $navigationSort = 6;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-computer-desktop';
 
     public static function form(Form $form): Form
     {

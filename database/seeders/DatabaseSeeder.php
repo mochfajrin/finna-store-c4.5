@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make("admin"),
         ]);
 
-        Lowongan::insert([
+        $Lowongan = Lowongan::insert([
             [
                 'judul' => 'Staff IT',
                 'url_gambar' => 'https://www.techdonut.co.uk/sites/default/files/styles/landing_pages_lists/public/youritpolicies_143568193_0.jpg?itok=8ojzbsqo',
@@ -87,7 +87,7 @@ Memberikan layanan pelanggan yang baik dengan memberikan informasi terkait produ
             ],
             [
                 'judul' => 'Kasir',
-                'url_gambar' => 'https://lh6.googleusercontent.com/Wl-SMc3OgoQHnL_-7UfAManPGwSF8a5gKOyqtqaqRCr46_Szwj1khSQdcMvDXwOkc9gI6KBJteonyFhePqLHzKToDCuVb_8G093-JCb8JERsBQzlrcEjYiF7uqows7D4xISDCYEyhWcr',
+                'url_gambar' => 'https://pasarind.id/assets/images/posts/6422b11c45b33.jpg',
                 'deskripsi' => '1. Transaksi Penjualan: Melayani pembayaran pelanggan dengan cepat dan akurat (cash, kartu, e-wallet).
 2. Pencatatan Keuangan: Membuat laporan harian pendapatan dan menyetorkan uang hasil penjualan sesuai prosedur.
 3. Pelayanan Pelanggan: Menyambut pelanggan dengan ramah dan memberikan informasi promo/restoran jika diperlukan.
@@ -97,5 +97,12 @@ Memberikan layanan pelanggan yang baik dengan memberikan informasi terkait produ
 7.Kerjasama Tim: Berkoordinasi dengan tim lain untuk memastikan operasional restoran berjalan lancar.'
             ]
         ]);
+        Lowongan::query()->first()->kriterias()->createMany([
+            ['judul' => 'ijazah'],
+            ['judul' => 'skck'],
+            ['judul' => 'riwayat'],
+            ['judul' => 'ktp'],
+        ]);
     }
+
 }

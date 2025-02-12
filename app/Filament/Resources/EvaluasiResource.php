@@ -6,18 +6,23 @@ use App\Filament\Resources\EvaluasiResource\Pages;
 use App\Filament\Resources\EvaluasiResource\RelationManagers;
 use App\Models\Evaluasi;
 use App\Models\Kriteria;
+use App\Models\Lowongan;
 use App\Models\Pelamar;
 use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\DB;
 
 class EvaluasiResource extends Resource
 {
@@ -28,29 +33,35 @@ class EvaluasiResource extends Resource
     protected static ?string $navigationLabel = 'Evaluasi';
 
     protected static ?int $navigationSort = 3;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-check';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Select::make("pelamar_id")->relationship('pelamar', 'nama')->searchable()->required()->label("Nama Pelamar")
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(function (string $operation, $state, Set $set) {
-                        $set('lowongan', Pelamar::where("id", $state)->first()->lowongan()->first()->judul);
-                    }),
-                TextInput::make("lowongan")->disabled()->default(function (callable $get) {
-                    return Pelamar::where("id", $get("pelamar_id"))->first()?->lowongan()->first()->judul;
+                Select::make('lowongan_id')->searchable()->options(Lowongan::query()->select('id', DB::raw("CONCAT(id,'-',judul) as lowongan"))->pluck('lowongan', 'id'))->live()->label("Lowongan")->required(),
+                Select::make('pelamar_id')->searchable()->options(Pelamar::query()->join('lowongans', 'pelamars.lowongan_id', '=', 'lowongans.id')->select('pelamars.id', DB::raw("CONCAT(pelamars.id,' - ',pelamars.nama, ' - ', lowongans.judul) as pelamar"))->pluck('pelamar', 'pelamars.id'))->label("Pelamar")->required(),
+                Select::make("ijazah")->options([
+                    'sd' => 'SD',
+                    'smp' => 'SMP',
+                    'sma' => 'SMA',
+                    'perguruan_tinggi' => 'Perguruan Tinggi',
+                ])->visible(function (Get $get) {
+                    return Kriteria::where('lowongan_id', $get('lowongan_id'))->where('judul', 'ijazah')->exists();
+                })->required(function (Get $get) {
+                    return Kriteria::where('lowongan_id', $get('lowongan_id'))->where('judul', 'ijazah')->exists();
                 }),
-                Select::make("kriteria_id")->relationship('kriteria', 'judul')->searchable()->required()->label("Nama Kriteria")
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(function (string $operation, $state, Set $set) {
-                        $set('kriteria', Kriteria::where("id", $state)->first()->lowongan()->first()->judul);
-                    }),
-                TextInput::make("kriteria")->disabled()->default(function (callable $get) {
-                    return Kriteria::where("id", $get("pelamar_id"))->first()?->lowongan()->first()->judul;
+                TextInput::make("riwayat")->numeric()->minValue(0)->maxValue(100)->visible(function (Get $get) {
+                    return Kriteria::where('lowongan_id', $get('lowongan_id'))->where('judul', 'riwayat')->exists();
+                })->required(function (Get $get) {
+                    return Kriteria::where('lowongan_id', $get('lowongan_id'))->where('judul', 'ijazah')->exists();
                 }),
-                TextInput::make("nilai")->numeric()->minValue(0)->maxValue(100)->default(0)
+                Checkbox::make("skck")->visible(function (Get $get) {
+                    return Kriteria::where('lowongan_id', $get('lowongan_id'))->where('judul', 'skck')->exists();
+                }),
+                Checkbox::make("ktp")->visible(function (Get $get) {
+                    return Kriteria::where('lowongan_id', $get('lowongan_id'))->where('judul', 'ktp')->exists();
+                })
             ]);
     }
 
@@ -91,4 +102,5 @@ class EvaluasiResource extends Resource
             'edit' => Pages\EditEvaluasi::route('/{record}/edit'),
         ];
     }
+
 }

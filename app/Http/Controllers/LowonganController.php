@@ -17,9 +17,12 @@ class LowonganController extends Controller
     public function show(int $lowonganId)
     {
         $lowongan = Lowongan::where('id', $lowonganId)->first();
+
         if (!$lowongan) {
             return abort(404);
         }
-        return view("lowongan.show", ['lowongan' => $lowongan]);
+        return view("lowongan.show", [
+            'lowongan' => $lowongan,
+        ]);
     }
 }

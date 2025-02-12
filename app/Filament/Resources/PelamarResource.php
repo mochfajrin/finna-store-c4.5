@@ -5,8 +5,8 @@ namespace App\Filament\Resources;
 use App\Enums\PelamarGender;
 use App\Filament\Resources\PelamarResource\Pages;
 use App\Filament\Resources\PelamarResource\RelationManagers;
+use App\Models\Lowongan;
 use App\Models\Pelamar;
-use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
@@ -20,6 +20,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Log;
 use Joaopaulolndev\FilamentPdfViewer\Forms\Components\PdfViewerField;
 
 class PelamarResource extends Resource
@@ -29,7 +30,7 @@ class PelamarResource extends Resource
     protected static ?string $pluralModelLabel = 'Data Pelamar';
     protected static ?string $navigationLabel = 'Data Pelamar';
     protected static ?int $navigationSort = 1;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
     public static function form(Form $form): Form
     {
@@ -47,13 +48,25 @@ class PelamarResource extends Resource
                     FileUpload::make('url_foto')->directory('lamaran/foto')->hidden(true),
                     PdfViewerField::make("url_foto")->label("Foto"),
                     FileUpload::make('url_ijazah')->directory('lamaran/ijazah')->hidden(true),
-                    PdfViewerField::make("url_ijazah")->label("Ijazah"),
+                    PdfViewerField::make("url_ijazah")->label("Ijazah")->visible(function (Get $get) {
+                        $id = Pelamar::where('id', $get('id'))->first()->lowongan->id;
+                        return Lowongan::where('id', $id)->first()->kriterias()->where('judul', 'ijazah')->exists();
+                    }),
                     FileUpload::make('url_skck')->directory('lamaran/skck')->hidden(true),
-                    PdfViewerField::make("url_skck")->label("SKCK"),
+                    PdfViewerField::make("url_skck")->label("SKCK")->visible(function (Get $get) {
+                        $id = Pelamar::where('id', $get('id'))->first()->lowongan->id;
+                        return Lowongan::where('id', $id)->first()->kriterias()->where('judul', 'skck')->exists();
+                    }),
                     FileUpload::make('url_ktp')->directory('lamaran/ktp')->hidden(true),
-                    PdfViewerField::make("url_ktp")->label("ktp"),
+                    PdfViewerField::make("url_ktp")->label("KTP")->visible(function (Get $get) {
+                        $id = Pelamar::where('id', $get('id'))->first()->lowongan->id;
+                        return Lowongan::where('id', $id)->first()->kriterias()->where('judul', 'ktp')->exists();
+                    }),
                     FileUpload::make('url_riwayat')->directory('lamaran/riwayat')->hidden(true),
-                    PdfViewerField::make("url_riwayat")->label("Riwayat"),
+                    PdfViewerField::make("url_riwayat")->label("Riwayat (CV)")->visible(function (Get $get) {
+                        $id = Pelamar::where('id', $get('id'))->first()->lowongan->id;
+                        return Lowongan::where('id', $id)->first()->kriterias()->where('judul', 'riwayat')->exists();
+                    }),
                 ])->columns(1)
             ]);
     }
@@ -62,7 +75,9 @@ class PelamarResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('id')->label('Kode Pelamar')->sortable()->searchable(),
                 TextColumn::make('nama')->label('Nama')->sortable()->searchable(),
+                TextColumn::make('lowongan.judul')->label('Lowongan')->sortable()->searchable(),
                 TextColumn::make('jenis_kelamin')->label("Jenis Kelamin"),
                 TextColumn::make('no_telepon')->label("No Telepon"),
                 TextColumn::make('email')->label("Email"),

@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->string("judul");
             $table->timestamps();
 
+            $table->unique(['lowongan_id', 'judul']);
             $table->foreign("lowongan_id")->references("id")->on("lowongans")->onDelete("cascade");
         });
     }

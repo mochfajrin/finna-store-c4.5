@@ -104,51 +104,62 @@
                         <p class="text-center text-red-700">{{ $message }}</p>
                     @enderror
                 </div>
-                <div class="mb-5">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="ijazah">Unggah
-                        Ijazah Pendidikan Terakhir</label>
-                    <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        aria-describedby="ijazah_help" id="ijazah" name="url_ijazah" type="file"
-                        accept="image/*, application/pdf" value="{{ old('url_ijazah') }}">
-                    @error('url_ijazah')
-                        <p class="text-center text-red-700">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        for="user_avatar">Unggah
-                        KTP</label>
-                    <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        aria-describedby="ktp_help" id="url_ktp" name="url_ktp" type="file"
-                        accept="image/*, application/pdf" value="{{ old('url_ktp') }}">
-                    @error('url_ktp')
-                        <p class="text-center text-red-700">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="skck">Unggah
-                        SKCK Aktif</label>
-                    <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        aria-describedby="skck_help" id="skck" name="url_skck" type="file"
-                        accept="image/*, application/pdf" value="{{ old('url_skck') }}">
-                    @error('url_skck')
-                        <p class="text-center text-red-700">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="riwayat">Unggah
-                        Riwayat (CV) </label>
-                    <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        aria-describedby="riwayat_help" id="riwayat" type="file"
-                        accept="image/*, application/pdf" name="url_riwayat" value="{{ old('url_riwayat') }}">
-                    @error('url_riwayat')
-                        <p class="text-center text-red-700">{{ $message }}</p>
-                    @enderror
-                </div>
+                @if ($isIjazah)
+                    <div class="mb-5">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            for="ijazah">Unggah
+                            Ijazah Pendidikan Terakhir</label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="ijazah_help" id="ijazah" name="url_ijazah" type="file"
+                            accept="image/*, application/pdf" value="{{ old('url_ijazah') }}">
+                        @error('url_ijazah')
+                            <p class="text-center text-red-700">{{ $message }}</p>
+                        @enderror
+                    </div>
+                @endif
+                @if ($isKtp)
+                    <div class="mb-5">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            for="user_avatar">Unggah
+                            KTP</label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="ktp_help" id="url_ktp" name="url_ktp" type="file"
+                            accept="image/*, application/pdf" value="{{ old('url_ktp') }}">
+                        @error('url_ktp')
+                            <p class="text-center text-red-700">{{ $message }}</p>
+                        @enderror
+                    </div>
+                @endif
+                @if ($isSkck)
+                    <div class="mb-5">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            for="skck">Unggah
+                            SKCK Aktif</label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="skck_help" id="skck" name="url_skck" type="file"
+                            accept="image/*, application/pdf" value="{{ old('url_skck') }}">
+                        @error('url_skck')
+                            <p class="text-center text-red-700">{{ $message }}</p>
+                        @enderror
+                    </div>
+                @endif
+                @if ($isRiwayat)
+                    <div class="mb-5">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            for="riwayat">Unggah
+                            Riwayat (CV) </label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="riwayat_help" id="riwayat" type="file"
+                            accept="image/*, application/pdf" name="url_riwayat" value="{{ old('url_riwayat') }}">
+                        @error('url_riwayat')
+                            <p class="text-center text-red-700">{{ $message }}</p>
+                        @enderror
+                    </div>
+                @endif
                 <div>
                     <button type="submit"
                         class="bg-[#6A64F1] hover:shadow-form w-full rounded-md  py-3 px-8 text-center text-base font-semibold text-white outline-none"

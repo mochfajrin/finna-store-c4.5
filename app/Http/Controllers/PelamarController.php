@@ -22,7 +22,18 @@ class PelamarController extends Controller
 {
     public function registerForm(Lowongan $lowongan)
     {
-        return view('pelamar.register-form', ['lowongan' => $lowongan]);
+        $isKtp = $lowongan->kriterias()->where('judul', 'ktp')->exists();
+        $isIjazah = $lowongan->kriterias()->where('judul', 'ijazah')->exists();
+        $isSkck = $lowongan->kriterias()->where('judul', 'skck')->exists();
+        $isRiwayat = $lowongan->kriterias()->where('judul', 'riwayat')->exists();
+
+        return view('pelamar.register-form', [
+            'lowongan' => $lowongan,
+            'isKtp' => $isKtp,
+            'isIjazah' => $isIjazah,
+            'isSkck' => $isSkck,
+            'isRiwayat' => $isRiwayat,
+        ]);
     }
     public function register(Request $request, int $lowonganId)
     {
@@ -34,18 +45,13 @@ class PelamarController extends Controller
             'alamat' => 'string|required|min:1|max:255',
             'tanggal_lahir' => 'date|required',
             'url_foto' => 'required|mimes:jpg,png,jpeg,pdf',
-            'url_ijazah' => 'required|mimes:jpg,png,jpeg,pdf',
-            'url_ktp' => 'required|mimes:jpg,png,jpeg,pdf',
-            'url_skck' => 'required|mimes:jpg,png,jpeg,pdf',
-            'url_riwayat' => 'required|mimes:jpg,png,jpeg,pdf',
+            'url_ijazah' => 'mimes:jpg,png,jpeg,pdf',
+            'url_ktp' => 'mimes:jpg,png,jpeg,pdf',
+            'url_skck' => 'mimes:jpg,png,jpeg,pdf',
+            'url_riwayat' => 'mimes:jpg,png,jpeg,pdf',
         ]);
-        $urlFoto = $this->storeFile($request->file('url_foto'), 'lamaran/foto');
-        $urlIjazah = $this->storeFile($request->file('url_ijazah'), 'lamaran/ijazah');
-        $urlKtp = $this->storeFile($request->file('url_ktp'), 'lamaran/ktp');
-        $urlSkck = $this->storeFile($request->file('url_skck'), 'lamaran/skck');
-        $urlRiwayat = $this->storeFile($request->file('url_riwayat'), 'lamaran/riwayat');
 
-        $pelamar = Pelamar::create([
+        $data = [
             'lowongan_id' => $lowonganId,
             'nama' => $request->nama,
             'jenis_kelamin' => $request->jenis_kelamin,
@@ -53,12 +59,27 @@ class PelamarController extends Controller
             'email' => $request->email,
             'alamat' => $request->alamat,
             'tanggal_lahir' => $request->tanggal_lahir,
-            'url_foto' => $urlFoto,
-            'url_ijazah' => $urlIjazah,
-            'url_ktp' => $urlKtp,
-            'url_skck' => $urlSkck,
-            'url_riwayat' => $urlRiwayat,
-        ]);
+            'url_foto' => '',
+            'url_ijazah' => '',
+            'url_ktp' => '',
+            'url_skck' => '',
+            'url_riwayat' => '',
+        ];
+        $data['url_foto'] = $this->storeFile($request->file('url_foto'), 'lamaran/foto');
+        if ($request->file('url_ijazah')) {
+            $data['url_ijazah'] = $this->storeFile($request->file('url_ijazah'), 'lamaran/ijazah');
+        }
+        if ($request->file('url_ktp')) {
+            $data['url_ktp'] = $this->storeFile($request->file('url_ktp'), 'lamaran/ktp');
+        }
+        if ($request->file('url_skck')) {
+            $data['url_skck'] = $this->storeFile($request->file('url_skck'), 'lamaran/skck');
+        }
+        if ($request->file('url_riwayat')) {
+            $data['url_riwayat'] = $this->storeFile($request->file('url_riwayat'), 'lamaran/riwayat');
+        }
+
+        $pelamar = Pelamar::create($data);
         $encryptedPayload = Crypt::encryptString($pelamar->id);
 
         $data = [

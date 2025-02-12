@@ -26,7 +26,7 @@ class LowonganResource extends Resource
     protected static ?string $pluralModelLabel = 'Lowongan Kerja';
     protected static ?string $navigationLabel = 'Lowongan Kerja';
     protected static ?int $navigationSort = 2;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
     public static function form(Form $form): Form
     {

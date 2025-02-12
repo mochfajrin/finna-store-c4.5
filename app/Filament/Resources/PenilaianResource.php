@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PenilaianResource\Pages;
 use App\Filament\Resources\PenilaianResource\RelationManagers;
+use App\Models\Lowongan;
 use App\Models\Pelamar;
 use App\Models\Penilaian;
 use Filament\Forms;
@@ -17,6 +18,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\DB;
 
 class PenilaianResource extends Resource
 {
@@ -27,20 +29,13 @@ class PenilaianResource extends Resource
     protected static ?string $navigationLabel = 'Penilaian';
 
     protected static ?int $navigationSort = 3;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Select::make("pelamar_id")->relationship('pelamar', 'nama')->searchable()->required()->label("Nama Pelamar")
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(function (string $operation, $state, Set $set) {
-                        $set('lowongan', Pelamar::where("id", $state)->first()->lowongan()->first()->judul);
-                    }),
-                TextInput::make("lowongan")->disabled()->default(function (callable $get) {
-                    return Pelamar::where("id", $get("pelamar_id"))->first()?->lowongan()->first()->judul;
-                }),
+                Select::make('pelamar_id')->searchable()->options(Pelamar::query()->join('lowongans', 'pelamars.lowongan_id', '=', 'lowongans.id')->select('pelamars.id', DB::raw("CONCAT(pelamars.id,' - ',pelamars.nama, ' - ', lowongans.judul) as pelamar"))->pluck('pelamar', 'pelamars.id'))->label("Pelamar"),
                 TextInput::make("nilai")->numeric()->minValue(0)->maxValue(100)->required()
             ]);
     }

@@ -14,7 +14,7 @@ class Lowongan extends Model
         "deskripsi",
         "url_gambar",
     ];
-    public function pelamar()
+    public function pelamars()
     {
         return $this->hasMany(Pelamar::class);
     }

@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\KriteriaResource\Pages;
 use App\Filament\Resources\KriteriaResource\RelationManagers;
 use App\Models\Kriteria;
+use App\Models\Lowongan;
 use Faker\Provider\ar_EG\Text;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
@@ -16,6 +17,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Validation\Rule;
 
 class KriteriaResource extends Resource
 {
@@ -24,18 +26,31 @@ class KriteriaResource extends Resource
     protected static ?string $pluralModelLabel = 'Atur Kriteria';
     protected static ?string $navigationLabel = 'Atur Kriteria';
     protected static ?int $navigationSort = 5;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make("judul")
-                    ->live(onBlur: true)
-                    ->required()
-                    ->minLength(1),
+                Select::make('judul')->required()->options([
+                    'ijazah' => "Ijazah",
+                    'skck' => "SKCK",
+                    'foto' => "Foto",
+                    'ktp' => "KTP",
+                    'riwayat' => "Riwayat (CV)",
+                ])->rules([
+                            function ($get) {
+                                return Rule::unique('kriterias', 'judul')->where(function ($query) use ($get) {
+                                    return $query->where('lowongan_id', $get('lowongan_id'));
+                                });
+                            },
+                        ])
+                    ->validationMessages([
+                        'unique' => 'Kriteria dengan judul ini sudah ada untuk lowongan yang dipilih.',
+                    ]),
                 Select::make("lowongan_id")->relationship("lowongan", "judul")
                     ->searchable()
+                    ->options(Lowongan::pluck('judul', 'id'))
                     ->required()
             ])->columns(1);
     }
