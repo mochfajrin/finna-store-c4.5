@@ -13,6 +13,7 @@ class EvaluasiRiwayat extends Seeder
      */
     public function run(): void
     {
+        Evaluasi::query()->delete();
         Evaluasi::insert([
             ['pelamar_id' => 1, 'nilai' => 100, 'kriteria_id' => 8],
             ['pelamar_id' => 2, 'nilai' => 100, 'kriteria_id' => 8],
