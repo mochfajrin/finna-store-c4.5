@@ -58,10 +58,10 @@ class EvaluasiResource extends Resource
                 }),
                 Checkbox::make("skck")->visible(function (Get $get) {
                     return Kriteria::where('lowongan_id', $get('lowongan_id'))->where('judul', 'skck')->exists();
-                }),
+                })->default(false),
                 Checkbox::make("ktp")->visible(function (Get $get) {
                     return Kriteria::where('lowongan_id', $get('lowongan_id'))->where('judul', 'ktp')->exists();
-                })
+                })->default(false)
             ]);
     }
 

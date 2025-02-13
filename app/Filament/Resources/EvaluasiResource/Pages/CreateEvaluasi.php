@@ -16,49 +16,63 @@ class CreateEvaluasi extends CreateRecord
     {
         $pelamarId = $data['pelamar_id'];
         $lowongan = Lowongan::find($data['lowongan_id']);
+        $evaluasi = null; // Variabel untuk menyimpan instance Evaluasi yang dibuat
+
         if ($data['ijazah']) {
-            $nilai = 0;
-            if ($data['ijazah'] == 'sd') {
-                $nilai = 25;
+            $nilai = match ($data['ijazah']) {
+                'sd' => 25,
+                'smp' => 50,
+                'sma' => 75,
+                'perguruan_tinggi' => 100,
+                default => 0,
+            };
+
+            $kriteriaId = $lowongan->kriterias()->where('judul', 'ijazah')->first()->id;
+            if (!Evaluasi::where('kriteria_id', $kriteriaId)->where('pelamar_id', $pelamarId)->exists()) {
+                $evaluasi = Evaluasi::create([
+                    'pelamar_id' => $pelamarId,
+                    'kriteria_id' => $kriteriaId,
+                    'nilai' => $nilai
+                ]);
             }
-            if ($data['ijazah'] == 'smp') {
-                $nilai = 50;
-            }
-            if ($data['ijazah'] == 'sma') {
-                $nilai = 75;
-            }
-            if ($data['ijazah'] == 'perguruan_tinggi') {
-                $nilai = 100;
-            }
-            Evaluasi::create([
-                'pelamar_id' => $pelamarId,
-                'kriteria_id' => $lowongan->kriterias()->where('judul', 'ijazah')->first()->id,
-                'nilai' => $nilai
-            ]);
         }
+
         if ($data['riwayat']) {
-            Evaluasi::create([
-                'pelamar_id' => $pelamarId,
-                'kriteria_id' => $lowongan->kriterias()->where('judul', 'ijazah')->first()->id,
-                'nilai' => $data['riwayat']
-            ]);
+            $kriteriaId = $lowongan->kriterias()->where('judul', 'riwayat')->first()->id;
+            if (!Evaluasi::where('kriteria_id', $kriteriaId)->where('pelamar_id', $pelamarId)->exists()) {
+                $evaluasi = Evaluasi::create([
+                    'pelamar_id' => $pelamarId,
+                    'kriteria_id' => $kriteriaId,
+                    'nilai' => $data['riwayat']
+                ]);
+            }
         }
         if (isset($data['skck'])) {
             $nilai = $data['skck'] ? 10 : 0;
-            Evaluasi::create([
-                'pelamar_id' => $pelamarId,
-                'kriteria_id' => $lowongan->kriterias()->where('judul', 'skck')->first()->id,
-                'nilai' => $data['skck']
-            ]);
+            $kriteriaId = $lowongan->kriterias()->where('judul', 'skck')->first()->id;
+            if (!Evaluasi::where('kriteria_id', $kriteriaId)->where('pelamar_id', $pelamarId)->exists()) {
+                $evaluasi = Evaluasi::create([
+                    'pelamar_id' => $pelamarId,
+                    'kriteria_id' => $kriteriaId,
+                    'nilai' => $data['skck']
+                ]);
+            }
         }
         if (isset($data['ktp'])) {
             $nilai = $data['ktp'] ? 10 : 0;
-            Evaluasi::create([
-                'pelamar_id' => $pelamarId,
-                'kriteria_id' => $lowongan->kriterias()->where('judul', 'ktp')->first()->id,
-                'nilai' => $data['ktp']
-            ]);
+            $kriteriaId = $lowongan->kriterias()->where('judul', 'ktp')->first()->id;
+            if (!Evaluasi::where('kriteria_id', $kriteriaId)->where('pelamar_id', $pelamarId)->exists()) {
+                $evaluasi = Evaluasi::create([
+                    'pelamar_id' => $pelamarId,
+                    'kriteria_id' => $kriteriaId,
+                    'nilai' => $data['ktp']
+                ]);
+            }
         }
-        return Evaluasi::create(['pelamar_id' => 1, 'kriteria_id' => 1, 'nilai' => 120]);
+        return $evaluasi ?? new Evaluasi();
+    }
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->integer('nilai');
             $table->timestamps();
 
+            $table->unique(['pelamar_id', 'kriteria_id']);
             $table->foreign("pelamar_id")->references("id")->on("pelamars")->onDelete("cascade");
             $table->foreign("kriteria_id")->references("id")->on("kriterias")->onDelete("cascade");
         });

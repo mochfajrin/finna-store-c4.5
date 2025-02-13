@@ -17,10 +17,10 @@ return new class extends Migration {
             $table->string("alamat");
             $table->date("tanggal_lahir");
             $table->string("url_foto");
-            $table->string("url_ijazah");
-            $table->string("url_ktp");
-            $table->string("url_skck");
-            $table->string("url_riwayat");
+            $table->string("url_ijazah")->nullable();
+            $table->string("url_ktp")->nullable();
+            $table->string("url_skck")->nullable();
+            $table->string("url_riwayat")->nullable();
             $table->timestamps();
 
             $table->foreign("lowongan_id")->references("id")->on("lowongans")->onDelete('cascade');
