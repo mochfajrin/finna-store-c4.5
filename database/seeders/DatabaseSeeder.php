@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         $this->call(WawancaraSeeder::class);
         $this->call(EvaluasiRiwayat::class);
         $this->call(EvaluasiIjazah::class);
-        $this->call(EvaluasiRiwayat::class);
+        $this->call(EvaluasiKtp::class);
         $this->call(EvaluasiSkck::class);
     }
 
