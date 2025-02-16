@@ -9,7 +9,7 @@ return new class extends Migration {
     {
         Schema::create('penilaians', function (Blueprint $table) {
             $table->id();
-            $table->integer('nilai');
+            $table->boolean('status');
             $table->unsignedBigInteger('pelamar_id');
             $table->timestamps();
 

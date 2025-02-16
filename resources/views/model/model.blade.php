@@ -95,7 +95,7 @@
                                 {{ $evaluation->total }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $evaluation->model }}
+                                {{ $evaluation->status }}
                             </td>
                         </tr>
                     @endforeach
