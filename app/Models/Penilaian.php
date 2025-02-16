@@ -9,7 +9,7 @@ class Penilaian extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "nilai",
+        "status",
         "pelamar_id"
     ];
     public function pelamar()
