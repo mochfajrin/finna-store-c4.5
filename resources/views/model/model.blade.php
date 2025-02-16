@@ -66,34 +66,90 @@
                 <tbody>
                     @foreach ($evaluations as $evaluation)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4" style="color: black;">
                                 {{ $evaluation->nama }}
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $evaluation->riwayat }}
+                            <td class="px-6 py-4" style="color: black;">
+                                @if ($evaluation->riwayat >= 50)
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                        {{ $evaluation->riwayat }}
+                                    </span>
+                                @else
+                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                        {{ $evaluation->riwayat }}
+                                    </span>
+                                @endif
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $evaluation->ktp }}
+                            <td class="px-6 py-4" style="color: black;">
+                                @if ($evaluation->ktp == 100)
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                        {{ $evaluation->ktp }}
+                                    </span>
+                                @else
+                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                        {{ $evaluation->ktp }}
+                                    </span>
+                                @endif
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $evaluation->skck }}
+                            <td class="px-6 py-4" style="color: black;">
+                                @if ($evaluation->skck == 100)
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                        {{ $evaluation->skck }}
+                                    </span>
+                                @else
+                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                        {{ $evaluation->skck }}
+                                    </span>
+                                @endif
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $evaluation->ijazah }}
+                            <td class="px-6 py-4" style="color: black;">
+                                @if ($evaluation->ijazah >= 50)
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                        {{ $evaluation->ijazah }}
+                                    </span>
+                                @else
+                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                        {{ $evaluation->ijazah }}
+                                    </span>
+                                @endif
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $evaluation->buta_warna }}
+                            <td class="px-6 py-4" style="color: black;">
+                                @if ($evaluation->buta_warna >= 80)
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                        {{ $evaluation->buta_warna }}
+                                    </span>
+                                @else
+                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                        {{ $evaluation->buta_warna }}
+                                    </span>
+                                @endif
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $evaluation->kemampuan }}
+                            <td class="px-6 py-4" style="color: black;">
+                                @if ($evaluation->kemampuan >= 50)
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                        {{ $evaluation->kemampuan }}
+                                    </span>
+                                @else
+                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                        {{ $evaluation->kemampuan }}
+                                    </span>
+                                @endif
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $evaluation->wawancara }}
+                            <td class="px-6 py-4" style="color: black;">
+                                @if ($evaluation->wawancara >= 50)
+                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                        {{ $evaluation->wawancara }}
+                                    </span>
+                                @else
+                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                        {{ $evaluation->wawancara }}
+                                    </span>
+                                @endif
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4" style="color: black;">
                                 {{ $evaluation->total }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4" style="color: black;">
                                 @if ($evaluation->status == true)
                                     <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         Terima
