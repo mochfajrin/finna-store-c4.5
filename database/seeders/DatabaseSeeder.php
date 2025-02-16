@@ -45,6 +45,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EvaluasiIjazah::class);
         $this->call(EvaluasiKtp::class);
         $this->call(EvaluasiSkck::class);
+        $this->call(PenilaianSeeder::class);
     }
 
 }

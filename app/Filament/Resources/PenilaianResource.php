@@ -8,6 +8,7 @@ use App\Models\Lowongan;
 use App\Models\Pelamar;
 use App\Models\Penilaian;
 use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -36,7 +37,7 @@ class PenilaianResource extends Resource
         return $form
             ->schema([
                 Select::make('pelamar_id')->searchable()->options(Pelamar::query()->join('lowongans', 'pelamars.lowongan_id', '=', 'lowongans.id')->select('pelamars.id', DB::raw("CONCAT(pelamars.id,' - ',pelamars.nama, ' - ', lowongans.judul) as pelamar"))->pluck('pelamar', 'pelamars.id'))->label("Pelamar"),
-                TextInput::make("nilai")->numeric()->minValue(0)->maxValue(100)->required()
+                Checkbox::make("status")->required()->default(false)
             ]);
     }
 
@@ -47,7 +48,7 @@ class PenilaianResource extends Resource
                 TextColumn::make("id")->searchable(),
                 TextColumn::make("pelamar.nama")->label("Nama Pelamar")->searchable(),
                 TextColumn::make("pelamar.lowongan.judul")->label("Pekerjaan")->searchable(),
-                TextColumn::make("nilai")->searchable(),
+                TextColumn::make("status")->searchable(),
             ])
             ->filters([
                 //

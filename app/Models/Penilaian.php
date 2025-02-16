@@ -10,7 +10,7 @@ class Penilaian extends Model
     use HasFactory;
     protected $fillable = [
         "status",
-        "pelamar_id"
+        "pelamar_id",
     ];
     public function pelamar()
     {

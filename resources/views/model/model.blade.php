@@ -28,7 +28,8 @@
         </div>
         <div class="relative overflow-x-auto container mx-auto">
             <!-- Add an ID to the table for DataTables initialization -->
-            <table id="evaluationsTable" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <table id="evaluationsTable"
+                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs uppercase" style="background-color: #16a34a;">
                     <tr>
                         <th scope="col" class="px-6 py-3" style="color: white;">
@@ -71,77 +72,91 @@
                             </td>
                             <td class="px-6 py-4" style="color: black;">
                                 @if ($evaluation->riwayat >= 50)
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         {{ $evaluation->riwayat }}
                                     </span>
                                 @else
-                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                                         {{ $evaluation->riwayat }}
                                     </span>
                                 @endif
                             </td>
                             <td class="px-6 py-4" style="color: black;">
                                 @if ($evaluation->ktp == 100)
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         {{ $evaluation->ktp }}
                                     </span>
                                 @else
-                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                                         {{ $evaluation->ktp }}
                                     </span>
                                 @endif
                             </td>
                             <td class="px-6 py-4" style="color: black;">
                                 @if ($evaluation->skck == 100)
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         {{ $evaluation->skck }}
                                     </span>
                                 @else
-                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                                         {{ $evaluation->skck }}
                                     </span>
                                 @endif
                             </td>
                             <td class="px-6 py-4" style="color: black;">
                                 @if ($evaluation->ijazah >= 50)
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         {{ $evaluation->ijazah }}
                                     </span>
                                 @else
-                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                                         {{ $evaluation->ijazah }}
                                     </span>
                                 @endif
                             </td>
                             <td class="px-6 py-4" style="color: black;">
                                 @if ($evaluation->buta_warna >= 80)
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         {{ $evaluation->buta_warna }}
                                     </span>
                                 @else
-                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                                         {{ $evaluation->buta_warna }}
                                     </span>
                                 @endif
                             </td>
                             <td class="px-6 py-4" style="color: black;">
                                 @if ($evaluation->kemampuan >= 50)
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         {{ $evaluation->kemampuan }}
                                     </span>
                                 @else
-                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                                         {{ $evaluation->kemampuan }}
                                     </span>
                                 @endif
                             </td>
                             <td class="px-6 py-4" style="color: black;">
                                 @if ($evaluation->wawancara >= 50)
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         {{ $evaluation->wawancara }}
                                     </span>
                                 @else
-                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                                         {{ $evaluation->wawancara }}
                                     </span>
                                 @endif
@@ -150,12 +165,14 @@
                                 {{ $evaluation->total }}
                             </td>
                             <td class="px-6 py-4" style="color: black;">
-                                @if ($evaluation->status == true)
-                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                @if ($evaluation->status)
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                         Terima
                                     </span>
                                 @else
-                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+                                    <span
+                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                                         Tolak
                                     </span>
                                 @endif

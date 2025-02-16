@@ -16,7 +16,7 @@ class ModelController extends Controller
             ->leftJoin('kriterias as k', 'e.kriteria_id', '=', 'k.id')
             ->leftJoin('wawancaras as w', 'p.id', '=', 'w.pelamar_id')
             ->leftJoin('penilaians as n', 'p.id', '=', 'n.pelamar_id')
-            ->select(
+            ->select([
                 'p.id as pelamar_id',
                 'p.nama as nama',
                 DB::raw("MAX(CASE WHEN k.judul = 'riwayat' THEN e.nilai END) as riwayat"),
@@ -28,18 +28,19 @@ class ModelController extends Controller
                 'w.nilai as wawancara',
                 'n.status as status',
                 DB::raw("
-                    COALESCE(MAX(CASE WHEN k.judul = 'riwayat' THEN e.nilai END), 0) +
-                    COALESCE(MAX(CASE WHEN k.judul = 'ktp' THEN e.nilai END), 0) +
-                    COALESCE(MAX(CASE WHEN k.judul = 'skck' THEN e.nilai END), 0) +
-                    COALESCE(MAX(CASE WHEN k.judul = 'ijazah' THEN e.nilai END), 0) +
-                    COALESCE(MAX(CASE WHEN t.jenis = 'buta_warna' THEN t.nilai END), 0) +
-                    COALESCE(MAX(CASE WHEN t.jenis = 'kemampuan' THEN t.nilai END), 0) +
-                    COALESCE(w.nilai, 0) +
-                    COALESCE(n.status, 0) -- Add status from penilaian to the total
-                AS total")
-            )
-            ->groupBy('p.id', 'p.nama', 'w.nilai', 'n.status') // Include 'n.nilai' in groupBy
+            COALESCE(MAX(CASE WHEN k.judul = 'riwayat' THEN e.nilai END), 0) +
+            COALESCE(MAX(CASE WHEN k.judul = 'ktp' THEN e.nilai END), 0) +
+            COALESCE(MAX(CASE WHEN k.judul = 'skck' THEN e.nilai END), 0) +
+            COALESCE(MAX(CASE WHEN k.judul = 'ijazah' THEN e.nilai END), 0) +
+            COALESCE(MAX(CASE WHEN t.jenis = 'buta_warna' THEN t.nilai END), 0) +
+            COALESCE(MAX(CASE WHEN t.jenis = 'kemampuan' THEN t.nilai END), 0) +
+            COALESCE(w.nilai, 0) +
+            COALESCE(n.status, 0)
+        AS total")
+            ])
+            ->groupBy('p.id', 'p.nama', 'w.nilai', 'n.status')
             ->get();
+
 
         return view('model.model', [
             'evaluations' => $evaluations
