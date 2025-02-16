@@ -56,40 +56,46 @@
                         <th scope="col" class="px-6 py-3">
                             Total
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            Status
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($models as $model)
+                    @foreach ($evaluations as $evaluation)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                             <td class="px-6 py-4">
-                                {{ $model->pelamar_id }}
+                                {{ $evaluation->pelamar_id }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->nama }}
+                                {{ $evaluation->nama }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->riwayat }}
+                                {{ $evaluation->riwayat }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->ktp }}
+                                {{ $evaluation->ktp }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->skck }}
+                                {{ $evaluation->skck }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->ijazah }}
+                                {{ $evaluation->ijazah }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->buta_warna }}
+                                {{ $evaluation->buta_warna }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->kemampuan }}
+                                {{ $evaluation->kemampuan }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->wawancara }}
+                                {{ $evaluation->wawancara }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $model->total }}
+                                {{ $evaluation->total }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $evaluation->model }}
                             </td>
                         </tr>
                     @endforeach
