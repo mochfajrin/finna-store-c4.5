@@ -35,7 +35,7 @@ class ModelController extends Controller
                     COALESCE(MAX(CASE WHEN t.jenis = 'buta_warna' THEN t.nilai END), 0) +
                     COALESCE(MAX(CASE WHEN t.jenis = 'kemampuan' THEN t.nilai END), 0) +
                     COALESCE(w.nilai, 0) +
-                    COALESCE(n.nilai, 0) -- Add nilai from penilaian to the total
+                    COALESCE(n.status, 0) -- Add status from penilaian to the total
                 AS total")
             )
             ->groupBy('p.id', 'p.nama', 'w.nilai', 'n.status') // Include 'n.nilai' in groupBy
