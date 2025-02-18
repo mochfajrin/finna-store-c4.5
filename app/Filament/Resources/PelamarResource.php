@@ -78,7 +78,7 @@ class PelamarResource extends Resource
                 TextColumn::make('id')->label('Kode Pelamar')->sortable()->searchable(),
                 TextColumn::make('nama')->label('Nama')->sortable()->searchable(),
                 TextColumn::make('lowongan.judul')->label('Lowongan')->sortable()->searchable(),
-                TextColumn::make('jenis_kelamin')->label("Jenis Kelamin"),
+                TextColumn::make('jenis_kelamin')->label("Jenis Kelamin")->formatStateUsing(fn($state) => PelamarGender::tryFrom($state)->getLabel()),
                 TextColumn::make('no_telepon')->label("No Telepon"),
                 TextColumn::make('email')->label("Email"),
                 TextColumn::make('alamat')->label("Alamat"),
