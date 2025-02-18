@@ -16,7 +16,7 @@ class PelamarSeeder extends Seeder
         Pelamar::insert([
             [
                 'id' => 1,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'Afiya nanda',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -31,7 +31,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'agelia wati',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -46,7 +46,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'agung zainuri',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -61,7 +61,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 4,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'ahmad akhqiq',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -76,7 +76,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'alfarizi',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -91,7 +91,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 6,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'ana fatmawati',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -106,7 +106,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 7,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'aprilia indah nur jannah',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -121,7 +121,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 8,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'syabilatur rahma',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -136,7 +136,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 9,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'cicik syahada',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -151,7 +151,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 10,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'denny setiawan',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -166,7 +166,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 11,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'eka febrianti',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -181,7 +181,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 12,
-                'lowongan_id' => 2,
+                'lowongan_id' => 1,
                 'nama' => 'evi kumalasari',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -601,7 +601,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 40,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'emita nur agustin',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -616,7 +616,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 41,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'fafit muslimin',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -631,7 +631,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 42,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'fiana sari',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -646,7 +646,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 43,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'lusiana dwi natasya',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -661,7 +661,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 44,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'moh nurhidayat',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -676,7 +676,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 45,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'muhammad shayrunizam',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -691,7 +691,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 46,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'muhammad rifqi dwi prasetyo',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -706,7 +706,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 47,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'suherman almajid',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',
@@ -721,7 +721,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 48,
-                'lowongan_id' => 2,
+                'lowongan_id' => 3,
                 'nama' => 'vevy eka aprilia',
                 'jenis_kelamin' => 'p',
                 'no_telepon' => '08812345678',

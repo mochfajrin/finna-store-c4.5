@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         User::query()->delete();
         User::factory()->create([
             'id' => 1,
-            'name' => 'Admin',
+            'name' => 'Lutfi',
             'email' => 'admin@gmail.com',
             'password' => Hash::make("admin"),
         ]);
