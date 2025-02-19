@@ -23,6 +23,7 @@ class WawancaraObserver
             $response = $modelController->calculateC45($penilaian);
             $predictedStatus = $response->getData(true);
 
+            Log::info('Instance Data: ' . json_encode($predictedStatus['instance']));
             Log::info('Predicted Status: ' . $predictedStatus['status']);
 
             $penilaian->status = $predictedStatus['status'];

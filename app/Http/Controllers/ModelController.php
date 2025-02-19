@@ -143,6 +143,7 @@ class ModelController extends Controller
 
         return response()->json([
             'message' => 'Status calculated successfully',
+            'instance' => $instance,
             'status' => $predictedStatus
         ], 200);
     }
