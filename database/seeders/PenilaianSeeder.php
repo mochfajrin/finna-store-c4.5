@@ -137,7 +137,7 @@ class PenilaianSeeder extends Seeder
             // 46
             false,
             // 47
-            true,
+            false,
             // 48
             false,
         ];
