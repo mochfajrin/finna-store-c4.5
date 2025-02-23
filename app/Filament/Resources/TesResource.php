@@ -22,7 +22,7 @@ class TesResource extends Resource
 
     protected static ?string $navigationLabel = 'Tes';
 
-    protected static ?int $navigationSort = 6;
+    protected static ?int $navigationSort = 3;
     protected static ?string $navigationIcon = 'heroicon-o-computer-desktop';
 
     public static function form(Form $form): Form
@@ -37,12 +37,13 @@ class TesResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make("id")->searchable(),
-                TextColumn::make("pelamar.nama")->searchable(),
-                TextColumn::make("pelamar.lowongan.judul")->searchable(),
-                TextColumn::make("jenis")->searchable(),
-                TextColumn::make("nilai")->searchable(),
+                TextColumn::make("id")->searchable()->sortable(),
+                TextColumn::make("pelamar.nama")->searchable()->sortable(),
+                TextColumn::make("pelamar.lowongan.judul")->searchable()->sortable(),
+                TextColumn::make("jenis")->searchable()->sortable(),
+                TextColumn::make("nilai")->searchable()->sortable(),
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

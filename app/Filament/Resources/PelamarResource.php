@@ -29,7 +29,7 @@ class PelamarResource extends Resource
     protected static ?string $modelLabel = 'Data Pelamar';
     protected static ?string $pluralModelLabel = 'Data Pelamar';
     protected static ?string $navigationLabel = 'Data Pelamar';
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 2;
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
     public static function form(Form $form): Form
@@ -78,11 +78,12 @@ class PelamarResource extends Resource
                 TextColumn::make('id')->label('Kode Pelamar')->sortable()->searchable(),
                 TextColumn::make('nama')->label('Nama')->sortable()->searchable(),
                 TextColumn::make('lowongan.judul')->label('Lowongan')->sortable()->searchable(),
-                TextColumn::make('jenis_kelamin')->label("Jenis Kelamin")->formatStateUsing(fn($state) => PelamarGender::tryFrom($state)->getLabel()),
-                TextColumn::make('no_telepon')->label("No Telepon"),
-                TextColumn::make('email')->label("Email"),
-                TextColumn::make('alamat')->label("Alamat"),
+                TextColumn::make('jenis_kelamin')->label("Jenis Kelamin")->formatStateUsing(fn($state) => PelamarGender::tryFrom($state)->getLabel())->searchable(),
+                TextColumn::make('no_telepon')->label("No Telepon")->searchable(),
+                TextColumn::make('email')->label("Email")->searchable()->sortable(),
+                TextColumn::make('alamat')->label("Alamat")->searchable()->sortable(),
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

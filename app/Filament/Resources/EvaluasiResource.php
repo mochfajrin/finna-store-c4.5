@@ -32,7 +32,7 @@ class EvaluasiResource extends Resource
 
     protected static ?string $navigationLabel = 'Evaluasi';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 4;
     protected static ?string $navigationIcon = 'heroicon-o-document-check';
 
     public static function form(Form $form): Form
@@ -42,6 +42,7 @@ class EvaluasiResource extends Resource
                 Select::make('lowongan_id')->searchable()->options(Lowongan::query()->select('id', DB::raw("CONCAT(id,'-',judul) as lowongan"))->pluck('lowongan', 'id'))->live()->label("Lowongan")->required(),
                 Select::make('pelamar_id')->searchable()->options(Pelamar::query()->join('lowongans', 'pelamars.lowongan_id', '=', 'lowongans.id')->select('pelamars.id', DB::raw("CONCAT(pelamars.id,' - ',pelamars.nama, ' - ', lowongans.judul) as pelamar"))->pluck('pelamar', 'pelamars.id'))->label("Pelamar")->required(),
                 Select::make("ijazah")->options([
+                    'tidak_ada' => "Tidak Ada",
                     'sd' => 'SD',
                     'smp' => 'SMP',
                     'sma' => 'SMA',
@@ -69,11 +70,12 @@ class EvaluasiResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make("id")->searchable(),
-                TextColumn::make("pelamar.nama")->searchable(),
-                TextColumn::make('kriteria.judul')->searchable(),
-                TextColumn::make('nilai')
+                TextColumn::make("id")->searchable()->sortable(),
+                TextColumn::make("pelamar.nama")->searchable()->sortable(),
+                TextColumn::make('kriteria.judul')->searchable()->sortable(),
+                TextColumn::make('nilai')->searchable()->sortable()
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

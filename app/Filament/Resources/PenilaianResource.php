@@ -29,7 +29,7 @@ class PenilaianResource extends Resource
 
     protected static ?string $navigationLabel = 'Penilaian';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 7;
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
 
     public static function form(Form $form): Form
@@ -45,11 +45,12 @@ class PenilaianResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make("id")->searchable(),
-                TextColumn::make("pelamar.nama")->label("Nama Pelamar")->searchable(),
-                TextColumn::make("pelamar.lowongan.judul")->label("Pekerjaan")->searchable(),
+                TextColumn::make("id")->searchable()->sortable(),
+                TextColumn::make("pelamar.nama")->label("Nama Pelamar")->searchable()->sortable(),
+                TextColumn::make("pelamar.lowongan.judul")->label("Pekerjaan")->searchable()->sortable(),
                 TextColumn::make("status")->searchable(),
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

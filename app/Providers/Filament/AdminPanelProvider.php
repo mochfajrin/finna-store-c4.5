@@ -54,12 +54,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])
-            ->navigationItems([
-                NavigationItem::make('Hasil Seleksi')
-                    ->url(url('/admin/model'))
-                    ->icon('heroicon-o-document-chart-bar')
-                    ->sort(10)
             ]);
     }
 }

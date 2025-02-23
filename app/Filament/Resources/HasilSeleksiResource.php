@@ -21,8 +21,8 @@ class HasilSeleksiResource extends Resource
 
     protected static ?string $navigationLabel = 'Hasil Seleksi';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?int $navigationSort = 9;
+    protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
+    protected static ?int $navigationSort = 8;
 
     public static function form(Form $form): Form
     {
@@ -80,6 +80,7 @@ class HasilSeleksiResource extends Resource
                 TextColumn::make("status")->formatStateUsing(fn($state) => $state == 1 ? 'Diterima' : 'Ditolak')
                     ->color(fn($state) => $state == 1 ? 'success' : 'danger')->badge()->sortable()->searchable(),
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

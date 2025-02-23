@@ -25,7 +25,7 @@ class LowonganResource extends Resource
     protected static ?string $modelLabel = 'Lowongan Kerja';
     protected static ?string $pluralModelLabel = 'Lowongan Kerja';
     protected static ?string $navigationLabel = 'Lowongan Kerja';
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 1;
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
     public static function form(Form $form): Form
@@ -49,10 +49,11 @@ class LowonganResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make("id"),
+                TextColumn::make("id")->searchable()->sortable(),
                 ImageColumn::make("url_gambar"),
                 TextColumn::make("judul")->sortable()->searchable(),
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

@@ -3,9 +3,12 @@
 namespace App\Observers;
 
 use App\Http\Controllers\ModelController;
+use App\Mail\SendResultEmail;
 use App\Models\Penilaian;
 use App\Models\Wawancara;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class WawancaraObserver
 {
@@ -29,5 +32,13 @@ class WawancaraObserver
             $penilaian->status = $predictedStatus['status'];
             $penilaian->save();
         }
+        $data = [
+            'subject' => 'Pemberitahuan Penerimaan Kerja di ' . config('app.name'),
+            'role' => $penilaian->pelamar->lowongan->judul,
+            'name' => $penilaian->pelamar->name,
+            'year' => Carbon::now()->year,
+            'status' => $penilaian->status
+        ];
+        Mail::to($penilaian->pelamar->email)->send(new SendResultEmail($data));
     }
 }

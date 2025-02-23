@@ -25,7 +25,7 @@ class KriteriaResource extends Resource
     protected static ?string $modelLabel = 'Atur Kriteria';
     protected static ?string $pluralModelLabel = 'Atur Kriteria';
     protected static ?string $navigationLabel = 'Atur Kriteria';
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 2;
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
 
     public static function form(Form $form): Form
@@ -59,10 +59,11 @@ class KriteriaResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make("id")->searchable(),
-                TextColumn::make("judul")->searchable(),
-                TextColumn::make("lowongan.judul")->searchable(),
+                TextColumn::make("id")->searchable()->sortable(),
+                TextColumn::make("judul")->searchable()->sortable(),
+                TextColumn::make("lowongan.judul")->searchable()->sortable(),
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

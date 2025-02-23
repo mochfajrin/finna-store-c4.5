@@ -23,7 +23,7 @@ class WawancaraResource extends Resource
 
     protected static ?string $navigationLabel = 'Wawancara';
 
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 5;
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     public static function form(Form $form): Form
@@ -38,12 +38,13 @@ class WawancaraResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make("id")->searchable(),
-                TextColumn::make("user.name")->label("Nama HRD")->searchable(),
-                TextColumn::make("pelamar.nama")->label("Nama Pelamar")->searchable(),
-                TextColumn::make("pelamar.lowongan.judul")->label("Pekerjaan")->searchable(),
-                TextColumn::make("nilai")->searchable(),
+                TextColumn::make("id")->searchable()->sortable(),
+                TextColumn::make("user.name")->label("Nama HRD")->searchable()->sortable(),
+                TextColumn::make("pelamar.nama")->label("Nama Pelamar")->searchable()->sortable(),
+                TextColumn::make("pelamar.lowongan.judul")->label("Pekerjaan")->searchable()->sortable(),
+                TextColumn::make("nilai")->searchable()->sortable(),
             ])
+            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

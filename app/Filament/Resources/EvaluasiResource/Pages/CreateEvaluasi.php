@@ -20,6 +20,7 @@ class CreateEvaluasi extends CreateRecord
 
         if ($data['ijazah']) {
             $nilai = match ($data['ijazah']) {
+                'tidak_ada' => 0,
                 'sd' => 25,
                 'smp' => 50,
                 'sma' => 75,
@@ -48,24 +49,24 @@ class CreateEvaluasi extends CreateRecord
             }
         }
         if (isset($data['skck'])) {
-            $nilai = $data['skck'] ? 10 : 0;
+            $nilai = $data['skck'] ? 100 : 0;
             $kriteriaId = $lowongan->kriterias()->where('judul', 'skck')->first()->id;
             if (!Evaluasi::where('kriteria_id', $kriteriaId)->where('pelamar_id', $pelamarId)->exists()) {
                 $evaluasi = Evaluasi::create([
                     'pelamar_id' => $pelamarId,
                     'kriteria_id' => $kriteriaId,
-                    'nilai' => $data['skck']
+                    'nilai' => $nilai
                 ]);
             }
         }
         if (isset($data['ktp'])) {
-            $nilai = $data['ktp'] ? 10 : 0;
+            $nilai = $data['ktp'] ? 100 : 0;
             $kriteriaId = $lowongan->kriterias()->where('judul', 'ktp')->first()->id;
             if (!Evaluasi::where('kriteria_id', $kriteriaId)->where('pelamar_id', $pelamarId)->exists()) {
                 $evaluasi = Evaluasi::create([
                     'pelamar_id' => $pelamarId,
                     'kriteria_id' => $kriteriaId,
-                    'nilai' => $data['ktp']
+                    'nilai' => $nilai
                 ]);
             }
         }
