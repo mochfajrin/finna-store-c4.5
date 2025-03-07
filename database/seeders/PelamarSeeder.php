@@ -23,11 +23,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'afiyananda@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 2,
@@ -38,11 +38,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'ageliawati@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 3,
@@ -53,11 +53,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'agungzainuri@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 4,
@@ -68,11 +68,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'ahmadakhqiq@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 5,
@@ -83,11 +83,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'alfarizi@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 6,
@@ -98,11 +98,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'anafatmawati@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 7,
@@ -113,11 +113,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'apriliaindahnurjannah@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 8,
@@ -128,11 +128,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'syabilaturrahma@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 9,
@@ -143,11 +143,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'ciciksyahada@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 10,
@@ -158,11 +158,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'dennysetiawan@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 11,
@@ -173,11 +173,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'ekafebrianti@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 12,
@@ -188,11 +188,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'evikumalasari@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 13,
@@ -203,11 +203,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'farahatiqa@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 14,
@@ -218,11 +218,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'andidwicahyono@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 15,
@@ -233,11 +233,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'annisakurniyawati@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 16,
@@ -248,11 +248,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'argikfitro@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 17,
@@ -263,11 +263,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'ekariswati@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 18,
@@ -278,11 +278,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'ekoprasetyo@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 19,
@@ -293,11 +293,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'fitriatussholihah@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 20,
@@ -308,11 +308,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'fitriyah@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 21,
@@ -323,11 +323,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'ismayatrinurani@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 22,
@@ -338,11 +338,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'lailatulazizah@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 23,
@@ -353,11 +353,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'maslukhinkhoirudin@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 24,
@@ -368,11 +368,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'muhammadainur@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 25,
@@ -383,11 +383,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'nadhifandika@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 26,
@@ -398,11 +398,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'palupidwikanasih@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 27,
@@ -413,11 +413,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'rivaldaniardiansyah@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 28,
@@ -428,11 +428,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'gilangrizqiabdullah@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 29,
@@ -443,11 +443,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'nurhidayah@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 30,
@@ -458,11 +458,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'intanpurnamasari@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 31,
@@ -473,11 +473,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'lenaaprilia@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 32,
@@ -488,11 +488,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'mitalistiawati@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 33,
@@ -503,11 +503,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'nofaanggunsakinah@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 34,
@@ -518,11 +518,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'putriamanda@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 35,
@@ -533,11 +533,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'yuliaanisaputri@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 36,
@@ -548,11 +548,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'zunnynuraulia@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 37,
@@ -563,11 +563,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'aldirusnan@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 38,
@@ -578,11 +578,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'astitikurniawati@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 39,
@@ -593,11 +593,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'achmadedymuchin@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 40,
@@ -608,11 +608,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'emitanuragustin@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 41,
@@ -623,11 +623,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'fafitmuslimin@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 42,
@@ -638,11 +638,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'fianasari@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 43,
@@ -653,11 +653,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'lusianadwinatasya@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 44,
@@ -668,11 +668,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'mohnurhidayat@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 45,
@@ -683,11 +683,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'muhammadshayrunizam@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 46,
@@ -698,11 +698,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'muhammadrifqidwiprasetyo@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 47,
@@ -713,11 +713,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'suhermanalmajid@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ],
             [
                 'id' => 48,
@@ -728,11 +728,11 @@ class PelamarSeeder extends Seeder
                 'email' => 'vevyekaaprilia@gmail.com',
                 'alamat' => 'Alamat contoh',
                 'tanggal_lahir' => '2000-01-01',
-                'url_foto' => '/lamaran/seeder/foto.jpg',
-                'url_ijazah' => '/lamaran/seeder/ijazah.jpg',
-                'url_ktp' => '/lamaran/seeder/ktp.png',
-                'url_skck' => '/lamaran/seeder/skck.jpg',
-                'url_riwayat' => '/lamaran/seeder/riwayat.jpg'
+                'url_foto' => '/seeder/foto.jpg',
+                'url_ijazah' => '/seeder/ijazah.jpg',
+                'url_ktp' => '/seeder/ktp.png',
+                'url_skck' => '/seeder/skck.jpg',
+                'url_riwayat' => '/seeder/riwayat.jpg'
             ]
         ]);
     }
