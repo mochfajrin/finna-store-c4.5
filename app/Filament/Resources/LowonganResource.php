@@ -40,7 +40,7 @@ class LowonganResource extends Resource
                     RichEditor::make("deskripsi")
                 ]),
                 Section::make("Meta")->schema([
-                    FileUpload::make("url_gambar")->required()->image()->directory("lowongan/gambar")
+                    FileUpload::make("url_gambar")->required(false)->image()->directory("lowongan/gambar")
                 ])
             ]);
     }

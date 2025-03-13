@@ -14,14 +14,19 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Joaopaulolndev\FilamentPdfViewer\Forms\Components\PdfViewerField;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class PelamarResource extends Resource
 {
@@ -45,8 +50,16 @@ class PelamarResource extends Resource
                     TextInput::make('tanggal_lahir')->label('Tanggal Lahir'),
                 ])->columns(2),
                 Section::make("Berkas")->schema([
-                    FileUpload::make('url_foto')->directory('lamaran/foto')->hidden(true),
-                    PdfViewerField::make("url_foto")->label("Foto"),
+                    FileUpload::make('url_foto')->directory('lamaran/foto')->visible(function (Get $get) {
+                        $mimetype = Storage::mimeType('public' . Arr::first($get('url_foto')));
+                        $parts = explode('/', $mimetype);
+                        return $parts[0] === 'image';
+                    }),
+                    PdfViewerField::make("url_foto")->label("Foto")->visible(function (Get $get) {
+                        $mimetype = Storage::mimeType('public' . Arr::first($get('url_foto')));
+                        $parts = explode('/', $mimetype);
+                        return $parts[0] !== 'image';
+                    }),
                     FileUpload::make('url_ijazah')->directory('lamaran/ijazah')->hidden(true),
                     PdfViewerField::make("url_ijazah")->label("Ijazah")->visible(function (Get $get) {
                         $id = Pelamar::where('id', $get('id'))->first()->lowongan->id;
