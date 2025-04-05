@@ -38,13 +38,13 @@ class CreateEvaluasi extends CreateRecord
             }
         }
 
-        if ($data['riwayat']) {
+        if (isset($data['riwayat'])) {
             $kriteriaId = $lowongan->kriterias()->where('judul', 'riwayat')->first()->id;
             if (!Evaluasi::where('kriteria_id', $kriteriaId)->where('pelamar_id', $pelamarId)->exists()) {
                 $evaluasi = Evaluasi::create([
                     'pelamar_id' => $pelamarId,
                     'kriteria_id' => $kriteriaId,
-                    'nilai' => $data['riwayat']
+                    'nilai' => $data['riwayat'] || 0
                 ]);
             }
         }

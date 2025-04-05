@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Evaluasi;
 use App\Models\Kriteria;
 use App\Models\Lowongan;
+use App\Models\Notification;
 use App\Models\Pelamar;
 use App\Models\Penilaian;
 use App\Models\Tes;
@@ -28,13 +29,24 @@ class DatabaseSeeder extends Seeder
         Tes::query()->delete();
         Pelamar::query()->delete();
         Kriteria::query()->delete();
+        Notification::query()->delete();
         Lowongan::query()->delete();
         User::query()->delete();
-        User::factory()->create([
-            'id' => 1,
-            'name' => 'Lutfi',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make("admin"),
+        User::insert([
+            [
+                'id' => 1,
+                'name' => 'Lutfi',
+                'role' => 'admin',
+                'email' => 'admin@gmail.com',
+                'password' => Hash::make("admin"),
+            ],
+            [
+                'id' => 2,
+                'name' => "Jhon Doe",
+                'role' => 'member',
+                "email" => "jhondoe@mail.com",
+                'password' => Hash::make('member'),
+            ]
         ]);
         $this->call(LowonganSeeder::class);
         $this->call(KriteriaSeeder::class);

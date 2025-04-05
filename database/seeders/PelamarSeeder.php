@@ -16,6 +16,7 @@ class PelamarSeeder extends Seeder
         Pelamar::insert([
             [
                 'id' => 1,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'Afiya nanda',
                 'jenis_kelamin' => 'p',
@@ -31,6 +32,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 2,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'agelia wati',
                 'jenis_kelamin' => 'p',
@@ -46,6 +48,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 3,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'agung zainuri',
                 'jenis_kelamin' => 'l',
@@ -61,6 +64,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 4,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'ahmad akhqiq',
                 'jenis_kelamin' => 'l',
@@ -76,6 +80,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 5,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'alfarizi',
                 'jenis_kelamin' => 'l',
@@ -91,6 +96,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 6,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'ana fatmawati',
                 'jenis_kelamin' => 'p',
@@ -106,6 +112,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 7,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'aprilia indah nur jannah',
                 'jenis_kelamin' => 'p',
@@ -121,6 +128,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 8,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'syabilatur rahma',
                 'jenis_kelamin' => 'p',
@@ -136,6 +144,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 9,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'cicik syahada',
                 'jenis_kelamin' => 'p',
@@ -151,6 +160,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 10,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'denny setiawan',
                 'jenis_kelamin' => 'l',
@@ -166,6 +176,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 11,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'eka febrianti',
                 'jenis_kelamin' => 'p',
@@ -181,6 +192,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 12,
+                'user_id' => 2,
                 'lowongan_id' => 1,
                 'nama' => 'evi kumalasari',
                 'jenis_kelamin' => 'p',
@@ -196,6 +208,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 13,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'farah atiqa',
                 'jenis_kelamin' => 'p',
@@ -211,6 +224,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 14,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'andi dwi cahyono',
                 'jenis_kelamin' => 'l',
@@ -226,6 +240,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 15,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'annisa kurniyawati',
                 'jenis_kelamin' => 'p',
@@ -241,6 +256,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 16,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'argik fitro',
                 'jenis_kelamin' => 'l',
@@ -256,6 +272,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 17,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'eka riswati',
                 'jenis_kelamin' => 'p',
@@ -271,6 +288,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 18,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'eko prasetyo',
                 'jenis_kelamin' => 'p',
@@ -286,6 +304,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 19,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'fitriatus sholihah',
                 'jenis_kelamin' => 'p',
@@ -301,6 +320,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 20,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'fitriyah',
                 'jenis_kelamin' => 'p',
@@ -316,6 +336,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 21,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'ismaya trinurani',
                 'jenis_kelamin' => 'p',
@@ -331,6 +352,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 22,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'lailatul azizah',
                 'jenis_kelamin' => 'p',
@@ -346,6 +368,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 23,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'maslukhin khoirudin',
                 'jenis_kelamin' => 'l',
@@ -361,6 +384,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 24,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'muhammad ainur',
                 'jenis_kelamin' => 'l',
@@ -376,6 +400,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 25,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'nadhif andika',
                 'jenis_kelamin' => 'l',
@@ -391,6 +416,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 26,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'palupi dwi kanasih',
                 'jenis_kelamin' => 'p',
@@ -406,6 +432,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 27,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'rival dani ardiansyah',
                 'jenis_kelamin' => 'l',
@@ -421,6 +448,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 28,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'gilang rizqi abdullah',
                 'jenis_kelamin' => 'l',
@@ -436,6 +464,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 29,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'nur hidayah',
                 'jenis_kelamin' => 'p',
@@ -451,6 +480,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 30,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'intan purnamasari',
                 'jenis_kelamin' => 'p',
@@ -466,6 +496,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 31,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'lena aprilia',
                 'jenis_kelamin' => 'p',
@@ -481,6 +512,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 32,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'mita listiawati',
                 'jenis_kelamin' => 'p',
@@ -496,6 +528,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 33,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'nofa anggun sakinah',
                 'jenis_kelamin' => 'p',
@@ -511,6 +544,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 34,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'putri amanda',
                 'jenis_kelamin' => 'p',
@@ -526,6 +560,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 35,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'yulia anisa putri',
                 'jenis_kelamin' => 'p',
@@ -541,6 +576,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 36,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'zunny nur aulia',
                 'jenis_kelamin' => 'p',
@@ -556,6 +592,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 37,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'aldi rusnan',
                 'jenis_kelamin' => 'l',
@@ -571,6 +608,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 38,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'astiti kurniawati',
                 'jenis_kelamin' => 'p',
@@ -586,6 +624,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 39,
+                'user_id' => 2,
                 'lowongan_id' => 2,
                 'nama' => 'achmad edy muchin',
                 'jenis_kelamin' => 'l',
@@ -601,6 +640,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 40,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'emita nur agustin',
                 'jenis_kelamin' => 'p',
@@ -616,6 +656,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 41,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'fafit muslimin',
                 'jenis_kelamin' => 'l',
@@ -631,6 +672,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 42,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'fiana sari',
                 'jenis_kelamin' => 'p',
@@ -646,6 +688,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 43,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'lusiana dwi natasya',
                 'jenis_kelamin' => 'p',
@@ -661,6 +704,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 44,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'moh nurhidayat',
                 'jenis_kelamin' => 'l',
@@ -676,6 +720,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 45,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'muhammad shayrunizam',
                 'jenis_kelamin' => 'l',
@@ -691,6 +736,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 46,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'muhammad rifqi dwi prasetyo',
                 'jenis_kelamin' => 'l',
@@ -706,6 +752,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 47,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'suherman almajid',
                 'jenis_kelamin' => 'l',
@@ -721,6 +768,7 @@ class PelamarSeeder extends Seeder
             ],
             [
                 'id' => 48,
+                'user_id' => 2,
                 'lowongan_id' => 3,
                 'nama' => 'vevy eka aprilia',
                 'jenis_kelamin' => 'p',

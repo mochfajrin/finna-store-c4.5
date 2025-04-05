@@ -10,6 +10,7 @@ return new class extends Migration {
         Schema::create('pelamars', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("lowongan_id");
+            $table->unsignedBigInteger("user_id");
             $table->string("nama");
             $table->enum("jenis_kelamin", ["l", "p"]);
             $table->string("no_telepon");
@@ -24,6 +25,7 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->foreign("lowongan_id")->references("id")->on("lowongans")->onDelete('cascade');
+            $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
         });
     }
     public function down(): void

@@ -22,6 +22,10 @@ class Lowongan extends Model
     {
         return $this->hasMany(Kriteria::class);
     }
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
     public function getThumbnailUrl()
     {
         $isUrl = str_contains($this->url_gambar, 'http');

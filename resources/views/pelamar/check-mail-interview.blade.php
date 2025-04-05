@@ -14,11 +14,10 @@
 
             <p class="mt-2 leading-loose text-gray-600 dark:text-gray-300">
                 Terima kasih atas minat Anda untuk bergabung dengan Finna Store. Kami mengundang Anda untuk mengikuti
-                tes wawancara sebagai bagian dari proses seleksi karyawan kami
-                sebagai {{ $pelamar->lowongan->judul }}.
+                tes online kesehatan (buta warna) dan keterampilan sebagai bagian dari proses seleksi karyawan kami.
             </p>
             <p class="mt-2 leading-loose text-gray-600 dark:text-gray-300">
-                Undangan interview telah dikirim ke email {{ $pelamar->email }}
+                Link pengerjaan tes telah dikirim ke email {{ $pelamar->email }}
             </p>
 
             <a href="https://gmail.com" target="_blank"

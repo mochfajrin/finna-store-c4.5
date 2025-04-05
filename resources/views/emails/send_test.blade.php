@@ -22,7 +22,8 @@
 
             <p class="mt-2 leading-loose text-gray-600 dark:text-gray-300">
                 Terima kasih atas minat Anda untuk bergabung dengan Finna Store. Kami mengundang Anda untuk mengikuti
-                tes online kesehatan (buta warna) dan keterampilan sebagai bagian dari proses seleksi karyawan kami.
+                tes online kesehatan (buta warna) dan keterampilan sebagai bagian dari proses seleksi karyawan kami
+                sebagai {{ $data['nama_lowongan'] }}.
             </p>
             <strong>Waktu masing-masing tes adalah 30 menit dan waktu akan langsung berjalan ketika mengklik link
                 dibawah</strong>

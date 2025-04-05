@@ -6,6 +6,7 @@ use App\Enums\PelamarGender;
 use App\Mail\SendInterviewMail;
 use App\Mail\SendTestMail;
 use App\Models\Lowongan;
+use App\Models\Notification;
 use App\Models\Pelamar;
 use App\Models\Tes;
 use App\Models\User;
@@ -15,6 +16,7 @@ use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
 
@@ -59,6 +61,7 @@ class PelamarController extends Controller
             'email' => $request->email,
             'alamat' => $request->alamat,
             'tanggal_lahir' => $request->tanggal_lahir,
+            'user_id' => Auth::user()->id,
             'url_foto' => '',
             'url_ijazah' => '',
             'url_ktp' => '',
@@ -81,15 +84,23 @@ class PelamarController extends Controller
 
         $pelamar = Pelamar::create($data);
         $encryptedPayload = Crypt::encryptString($pelamar->id);
+        $namaLowongan = Lowongan::find($lowonganId)->judul;
 
         $data = [
             'subject' => "Pengerjaan Tes Rekruitmen - " . config('app.name'),
             'buta_warna' => config('app.url') . "/test/buta-warna/$encryptedPayload",
             'kemampuan' => config('app.url') . "/test/kemampuan/$encryptedPayload",
-            'nama' => $pelamar->nama
+            'nama' => $pelamar->nama,
+            'nama_lowongan' => $namaLowongan
         ];
         Mail::to($pelamar->email)->send(new SendTestMail($data));
-        return redirect("lamaran/mail/$encryptedPayload");
+        $namaLowongan = Lowongan::find($lowonganId)->judul;
+        Notification::create([
+            'title' => "Pengerjaan Tes Rekruitmen - $namaLowongan",
+            'pelamar_id' => $pelamar->id,
+            'type' => 'test'
+        ]);
+        return redirect("/users/notifications");
 
     }
     public function colorBlindTest($encryptedPayload)
@@ -414,6 +425,12 @@ class PelamarController extends Controller
                         'date' => $date->format("Y-m-d")
                     ];
                     Mail::to($pelamar->email)->send(new SendInterviewMail($data));
+                    Notification::create([
+                        'title' => "Undangan Interview Kerja - " . config('app.name'),
+                        'pelamar_id' => $pelamar->id,
+                        'type' => 'interview'
+                    ]);
+                    return redirect('/users/notifications');
                 }
             }
         }
@@ -423,9 +440,12 @@ class PelamarController extends Controller
         try {
             $id = (int) Crypt::decryptString($encryptedPayload);
             $pelamar = Pelamar::where('id', $id)->first();
-            if (!$pelamar) {
+            if (!$pelamar || $pelamar->user_id != Auth::user()->id) {
                 return abort(404);
             }
+            $notification = Notification::where('pelamar_id')->where('type', 'test')->first();
+            $notification->is_read = true;
+            $notification->save();
             return view('pelamar.check-mail', ['pelamar' => $pelamar]);
         } catch (DecryptException $e) {
             return abort(404);
