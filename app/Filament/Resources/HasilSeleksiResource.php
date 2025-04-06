@@ -3,22 +3,16 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\HasilSeleksiResource\Pages;
-use App\Filament\Resources\HasilSeleksiResource\RelationManagers;
 use App\Models\Pelamar;
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\DB;
 
 class HasilSeleksiResource extends Resource
 {
     protected static ?string $pluralModelLabel = 'Hasil Seleksi';
-
     protected static ?string $navigationLabel = 'Hasil Seleksi';
 
     protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
@@ -67,7 +61,7 @@ class HasilSeleksiResource extends Resource
         return $table
             ->query($evaluations)
             ->columns([
-                TextColumn::make('id')->label("Kode Pelamar")->searchable()->sortable(),
+                TextColumn::make('id')->label("Kode Pelamar")->searchable(['pelamars.id'])->sortable(),
                 TextColumn::make("nama")->searchable()->sortable(),
                 TextColumn::make("riwayat"),
                 TextColumn::make("ktp"),
@@ -76,9 +70,9 @@ class HasilSeleksiResource extends Resource
                 TextColumn::make("buta_warna"),
                 TextColumn::make("kemampuan"),
                 TextColumn::make("wawancara"),
-                TextColumn::make("total")->sortable()->searchable(),
+                TextColumn::make("total"),
                 TextColumn::make("status")->formatStateUsing(fn($state) => $state == 1 ? 'Diterima' : 'Ditolak')
-                    ->color(fn($state) => $state == 1 ? 'success' : 'danger')->badge()->sortable()->searchable(),
+                    ->color(fn($state) => $state == 1 ? 'success' : 'danger')->badge(),
             ])
             ->defaultSort('id', 'desc')
             ->filters([

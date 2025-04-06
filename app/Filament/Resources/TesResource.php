@@ -38,6 +38,7 @@ class TesResource extends Resource
         return $table
             ->columns([
                 TextColumn::make("id")->searchable()->sortable(),
+                TextColumn::make("pelamar.id")->label('Kode Pelamar')->searchable()->sortable(),
                 TextColumn::make("pelamar.nama")->searchable()->sortable(),
                 TextColumn::make("pelamar.lowongan.judul")->searchable()->sortable(),
                 TextColumn::make("jenis")->searchable()->sortable(),

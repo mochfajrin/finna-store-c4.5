@@ -39,6 +39,7 @@ class WawancaraResource extends Resource
         return $table
             ->columns([
                 TextColumn::make("id")->searchable()->sortable(),
+                TextColumn::make("pelamar.id")->label("Kode Pelamar")->searchable()->sortable(),
                 TextColumn::make("user.name")->label("Nama HRD")->searchable()->sortable(),
                 TextColumn::make("pelamar.nama")->label("Nama Pelamar")->searchable()->sortable(),
                 TextColumn::make("pelamar.lowongan.judul")->label("Pekerjaan")->searchable()->sortable(),

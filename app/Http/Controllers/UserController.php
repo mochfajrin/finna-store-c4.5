@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notification;
-use App\Models\Pelamar;
-use App\Models\User;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
+
 
 class UserController extends Controller
 {
@@ -60,9 +58,5 @@ class UserController extends Controller
         $user->password = bcrypt($data['password']);
         $user->save();
         return redirect('/users');
-    }
-
-    public function notification(Request $request)
-    {
     }
 }
