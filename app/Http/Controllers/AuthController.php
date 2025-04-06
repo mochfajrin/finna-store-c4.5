@@ -29,7 +29,9 @@ class AuthController extends Controller
         }
 
         Auth::attempt($data);
-
+        if ($user->role == 'admin') {
+            return redirect("/admin");
+        }
         return redirect('/');
     }
     public function register(Request $request)

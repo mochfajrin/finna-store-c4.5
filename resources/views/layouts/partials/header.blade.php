@@ -35,7 +35,7 @@
                     <x-nav-link href="{{ route('lowongan.index') }}" :active="request()->routeIs('lowongan.index')">
                         Lowongan
                     </x-nav-link>
-                    @if (Auth::user())
+                    @if (Auth::user() && Auth::user()->role == 'member')
                         <x-nav-link href="{{ route('user.index') }}">
                             <img class="w-6 h-6 rounded-full" src="{{ asset('images/blank-profile.png') }}"
                                 alt="Rounded avatar">
@@ -58,15 +58,23 @@
                                     </div>
                                 @endif
                             </button>
-                            <x-nav-link href="{{ route('logout') }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
-                                </svg>
-                            </x-nav-link>
                         </x-nav-link>
-                    @else
+                        <x-nav-link href="{{ route('logout') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+                            </svg>
+                        </x-nav-link>
+                    @elseif (Auth::user())
+                        <x-nav-link href="{{ route('logout') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+                            </svg>
+                        </x-nav-link>
+                    @elseif(!Auth::user())
                         <x-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
                             Login
                         </x-nav-link>
