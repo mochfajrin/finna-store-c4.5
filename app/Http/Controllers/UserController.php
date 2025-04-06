@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Notification;
 use App\Models\Pelamar;
+use App\Models\User;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,13 +36,30 @@ class UserController extends Controller
 
             $notification->is_read = true;
             $notification->save();
-            return view('pelamar.check-mail', ['pelamar' => $pelamar]);
+            if ($notification->type == 'test') {
+                return view('pelamar.check-mail-test', ['pelamar' => $pelamar]);
+            } else if ($notification->type == 'interview') {
+                return view('pelamar.check-mail-interview', ['pelamar' => $pelamar]);
+            } else {
+                return view('pelamar.check-mail-results', ['pelamar' => $pelamar]);
+            }
         } catch (DecryptException $e) {
             return abort(404);
         }
     }
-    public function update()
+    public function update(Request $request)
     {
+        $data = $request->validate([
+            'name' => 'string|required',
+            'password' => 'string|confirmed|required',
+            'password_confirmation' => 'string|required'
+        ]);
+
+        $user = Auth::user();
+        $user->name = $data['name'];
+        $user->password = bcrypt($data['password']);
+        $user->save();
+        return redirect('/users');
     }
 
     public function notification(Request $request)

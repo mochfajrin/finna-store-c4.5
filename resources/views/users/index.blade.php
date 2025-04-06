@@ -62,7 +62,7 @@
                         </button>
                     </div>
                     <!-- Modal body -->
-                    <form class="p-4 md:p-5" action="{{ route('user.update') }}">
+                    <form class="p-4 md:p-5" method="post" action="{{ route('user.update') }}">
                         @csrf
                         <div class="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div class="col-span-2 sm:col-span-1">
@@ -73,6 +73,9 @@
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                                     name="name" placeholder="Masukkan nama lengkap anda" value="{{ $user->name }}"
                                     required />
+                                @error('name')
+                                    <p class="text-center text-red-700">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="col-span-2 sm:col-span-1">
                                 <label for="password_info_modal"
@@ -81,15 +84,21 @@
                                 <input type="password" id="password_info_modal"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                                     name="password" required />
+                                @error('password')
+                                    <p class="text-center text-red-700">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="col-span-2 sm:col-span-1">
                                 <label for="confirm_password_info_modal"
                                     class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"> Konfirmasi
                                     Password Baru*
                                 </label>
-                                <input type="text" id="confirm_password_info_modal"
+                                <input type="password" id="confirm_password_info_modal"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                                    name="confirmPassword" required />
+                                    name="password_confirmation" required />
+                                @error('password')
+                                    <p class="text-center text-red-700">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="border-t border-gray-200 pt-4 dark:border-gray-700 md:pt-5">

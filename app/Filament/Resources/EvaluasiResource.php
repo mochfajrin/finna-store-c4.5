@@ -71,6 +71,8 @@ class EvaluasiResource extends Resource
         return $table
             ->columns([
                 TextColumn::make("id")->searchable()->sortable(),
+                TextColumn::make("pelamar.id")->label('Id Pelamar')->searchable()->sortable(),
+                TextColumn::make("pelamar.lowongan_id")->label('Id Lowongan')->searchable()->sortable(),
                 TextColumn::make("pelamar.nama")->searchable()->sortable(),
                 TextColumn::make('kriteria.judul')->searchable()->sortable(),
                 TextColumn::make('nilai')->searchable()->sortable()

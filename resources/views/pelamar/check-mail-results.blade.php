@@ -13,12 +13,12 @@
             <h2 class="text-gray-700 dark:text-gray-200">Hi {{ $pelamar->nama }},</h2>
 
             <p class="mt-2 leading-loose text-gray-600 dark:text-gray-300">
-                Terima kasih atas minat Anda untuk bergabung dengan Finna Store. Kami mengundang Anda untuk mengikuti
+                Terima kasih atas minat Anda untuk bergabung dengan Finna Store dan sudah mengikuti tahapan seleksi
                 tes wawancara sebagai bagian dari proses seleksi karyawan kami
                 sebagai {{ $pelamar->lowongan->judul }}.
             </p>
             <p class="mt-2 leading-loose text-gray-600 dark:text-gray-300">
-                Undangan interview telah dikirim ke email {{ $pelamar->email }}
+                Hasil seleksi telah dikirim ke email {{ $pelamar->email }}
             </p>
 
             <a href="https://gmail.com" target="_blank"

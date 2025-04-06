@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Http\Controllers\ModelController;
 use App\Mail\SendResultEmail;
+use App\Models\Notification;
 use App\Models\Penilaian;
 use App\Models\Wawancara;
 use Carbon\Carbon;
@@ -40,5 +41,10 @@ class WawancaraObserver
             'status' => $penilaian->status
         ];
         Mail::to($penilaian->pelamar->email)->send(new SendResultEmail($data));
+        Notification::create([
+            'title' => "Pemberitahuan penerimaan kerja lowongan {$penilaian->pelamar->lowongan->judul}",
+            'type' => 'result',
+            'pelamar_id' => $wawancara->pelamar_id
+        ]);
     }
 }
