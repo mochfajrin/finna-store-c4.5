@@ -36,7 +36,7 @@ class WawancaraObserver
         $data = [
             'subject' => 'Pemberitahuan Penerimaan Kerja di ' . config('app.name'),
             'role' => $penilaian->pelamar->lowongan->judul,
-            'name' => $penilaian->pelamar->name,
+            'name' => $penilaian->pelamar->nama,
             'year' => Carbon::now()->year,
             'status' => $penilaian->status
         ];
