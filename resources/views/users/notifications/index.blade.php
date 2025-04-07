@@ -7,6 +7,7 @@
                         class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $notification->title }}
+                        Kode Lamaran: {{ str_pad($notification->pelamar_id, 4, '0', STR_PAD_LEFT) }}
                         @if (!$notification->is_read)
                             <span
                                 class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ms-3">Belum

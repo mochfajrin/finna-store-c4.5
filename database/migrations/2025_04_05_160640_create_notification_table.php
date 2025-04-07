@@ -14,6 +14,7 @@ return new class extends Migration {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->text('content');
             $table->string('type');
             $table->boolean('is_read')->default(false);
             $table->foreignIdFor(Pelamar::class)->constrained()->onDelete('cascade');

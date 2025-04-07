@@ -40,7 +40,18 @@ class EvaluasiResource extends Resource
         return $form
             ->schema([
                 Select::make('lowongan_id')->searchable()->options(Lowongan::query()->select('id', DB::raw("CONCAT(id,'-',judul) as lowongan"))->pluck('lowongan', 'id'))->live()->label("Lowongan")->required(),
-                Select::make('pelamar_id')->searchable()->options(Pelamar::query()->join('lowongans', 'pelamars.lowongan_id', '=', 'lowongans.id')->select('pelamars.id', DB::raw("CONCAT(pelamars.id,' - ',pelamars.nama, ' - ', lowongans.judul) as pelamar"))->pluck('pelamar', 'pelamars.id'))->label("Pelamar")->required(),
+                Select::make('pelamar_id')
+                    ->searchable()
+                    ->options(function (Get $get) {
+                        return Pelamar::query()
+                            ->join('lowongans', 'pelamars.lowongan_id', '=', 'lowongans.id')
+                            ->select('pelamars.id', DB::raw("CONCAT(pelamars.id,' - ',pelamars.nama, ' - ', lowongans.judul) as pelamar"))
+                            ->where('pelamars.lowongan_id', $get('lowongan_id'))
+                            ->pluck('pelamar', 'pelamars.id');
+                    })
+                    ->live()
+                    ->label("Pelamar")
+                    ->required(),
                 Select::make("ijazah")->options([
                     'tidak_ada' => "Tidak Ada",
                     'sd' => 'SD',

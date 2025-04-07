@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Notification extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'type', 'is_read', 'pelamar_id'];
+    protected $fillable = ['title', 'type', 'content', 'is_read', 'pelamar_id'];
     public function pelamar()
     {
         return $this->belongsTo(Pelamar::class);

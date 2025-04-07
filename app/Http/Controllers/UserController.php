@@ -26,24 +26,15 @@ class UserController extends Controller
     }
     public function showNotification(Notification $notification)
     {
-        try {
-            $pelamar = $notification->pelamar()->first();
-            if (!$pelamar || $pelamar->user_id != Auth::user()->id) {
-                return abort(404);
-            }
-
-            $notification->is_read = true;
-            $notification->save();
-            if ($notification->type == 'test') {
-                return view('pelamar.check-mail-test', ['pelamar' => $pelamar]);
-            } else if ($notification->type == 'interview') {
-                return view('pelamar.check-mail-interview', ['pelamar' => $pelamar]);
-            } else {
-                return view('pelamar.check-mail-results', ['pelamar' => $pelamar]);
-            }
-        } catch (DecryptException $e) {
+        $pelamar = $notification->pelamar()->first();
+        if (!$pelamar || $pelamar->user_id != Auth::user()->id) {
             return abort(404);
         }
+
+        $notification->is_read = true;
+        $notification->save();
+        return view('users.notifications.show', ['notification' => $notification]);
+
     }
     public function update(Request $request)
     {
