@@ -92,7 +92,7 @@ class PelamarController extends Controller
             'nama' => $pelamar->nama,
             'nama_lowongan' => $namaLowongan
         ];
-        // Mail::to($pelamar->email)->send(new SendTestMail($data));
+        Mail::to($pelamar->email)->send(new SendTestMail($data));
         $namaLowongan = Lowongan::find($lowonganId)->judul;
         Notification::create([
             'title' => "Pengerjaan Tes Rekruitmen - $namaLowongan",
