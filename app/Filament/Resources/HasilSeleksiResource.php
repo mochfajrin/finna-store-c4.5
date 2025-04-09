@@ -52,8 +52,7 @@ class HasilSeleksiResource extends Resource
                 COALESCE(MAX(CASE WHEN k.judul = 'ijazah' THEN e.nilai END), 0) +
                 COALESCE(MAX(CASE WHEN t.jenis = 'buta_warna' THEN t.nilai END), 0) +
                 COALESCE(MAX(CASE WHEN t.jenis = 'kemampuan' THEN t.nilai END), 0) +
-                COALESCE(w.nilai, 0) +
-                COALESCE(n.status, 0)
+                COALESCE(w.nilai, 0)
             AS total")
             ])
             ->groupBy('pelamars.id', 'pelamars.nama', 'w.nilai', 'n.status');
@@ -78,11 +77,8 @@ class HasilSeleksiResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
-            ])
-            ->bulkActions([
-
-            ]);
+            ->actions([])
+            ->bulkActions([]);
     }
 
     public static function getRelations(): array
