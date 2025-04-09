@@ -44,7 +44,7 @@ class CreateEvaluasi extends CreateRecord
                 $evaluasi = Evaluasi::create([
                     'pelamar_id' => $pelamarId,
                     'kriteria_id' => $kriteriaId,
-                    'nilai' => $data['riwayat'] || 0
+                    'nilai' => $data['riwayat']
                 ]);
             }
         }
