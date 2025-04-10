@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class ModelController extends Controller
 {
+    private $continuousAttributes = ['kemampuan', 'wawancara'];
+
     public function __invoke()
     {
         $evaluations = DB::table('pelamars as p')
@@ -79,22 +81,22 @@ class ModelController extends Controller
             ->groupBy('p.id', 'p.nama', 'w.nilai', 'n.status')
             ->get();
 
-        // Prepare training data
+        // Prepare training data with correct data types
         $trainingData = [];
         foreach ($evaluationsDataTraining as $eval) {
             $trainingData[] = [
-                'riwayat' => $eval->riwayat ?? 0,
-                'ktp' => $eval->ktp ?? 0,
-                'skck' => $eval->skck ?? 0,
-                'ijazah' => $eval->ijazah ?? 0,
-                'buta_warna' => $eval->buta_warna ?? 0,
-                'kemampuan' => $eval->kemampuan ?? 0,
-                'wawancara' => $eval->wawancara ?? 0,
+                'riwayat' => (int)($eval->riwayat ?? 0),
+                'ktp' => (int)($eval->ktp ?? 0),
+                'skck' => (int)($eval->skck ?? 0),
+                'ijazah' => (int)($eval->ijazah ?? 0),
+                'buta_warna' => (int)($eval->buta_warna ?? 0),
+                'kemampuan' => (int)($eval->kemampuan ?? 0),
+                'wawancara' => (int)($eval->wawancara ?? 0),
                 'status' => $eval->status,
             ];
         }
 
-        // Build the decision tree
+        // Build decision tree with continuous handling
         $attributes = ['riwayat', 'ktp', 'skck', 'ijazah', 'buta_warna', 'kemampuan', 'wawancara'];
         $tree = $this->buildTree($trainingData, $attributes);
 
@@ -174,7 +176,7 @@ class ModelController extends Controller
         return $entropy;
     }
 
-    private function calculateInformationGain($data, $attribute, $entropy)
+    private function calculateInformationGainForCategorical($data, $attribute, $entropy)
     {
         $values = array_unique(array_column($data, $attribute));
         $total = count($data);
@@ -186,11 +188,11 @@ class ModelController extends Controller
                 return $row[$attribute] == $value;
             });
             $subsetCount = count($subset);
-            if ($subsetCount == 0) {
-                continue;
-            }
+            if ($subsetCount == 0) continue;
+
             $subsetEntropy = $this->calculateEntropy($subset);
             $weightedEntropy += ($subsetCount / $total) * $subsetEntropy;
+
             $probability = $subsetCount / $total;
             if ($probability > 0) {
                 $splitInfo -= $probability * log($probability, 2);
@@ -200,9 +202,50 @@ class ModelController extends Controller
         $informationGain = $entropy - $weightedEntropy;
         $gainRatio = $splitInfo != 0 ? $informationGain / $splitInfo : 0;
 
+        return ['gain_ratio' => $gainRatio];
+    }
+
+    private function calculateInformationGainForContinuous(&$data, $attribute, $entropy)
+    {
+        usort($data, function ($a, $b) use ($attribute) {
+            return $a[$attribute] <=> $b[$attribute];
+        });
+
+        $total = count($data);
+        $maxGainRatio = -INF;
+        $bestThreshold = null;
+
+        for ($i = 0; $i < $total - 1; $i++) {
+            if ($data[$i]['status'] == $data[$i + 1]['status']) continue;
+
+            $threshold = ($data[$i][$attribute] + $data[$i + 1][$attribute]) / 2;
+            $left = array_slice($data, 0, $i + 1);
+            $right = array_slice($data, $i + 1);
+
+            $leftEntropy = $this->calculateEntropy($left);
+            $rightEntropy = $this->calculateEntropy($right);
+
+            $weightedEntropy = (count($left) / $total) * $leftEntropy + (count($right) / $total) * $rightEntropy;
+            $informationGain = $entropy - $weightedEntropy;
+
+            $splitInfo = 0;
+            $probLeft = count($left) / $total;
+            $probRight = count($right) / $total;
+
+            if ($probLeft > 0) $splitInfo -= $probLeft * log($probLeft, 2);
+            if ($probRight > 0) $splitInfo -= $probRight * log($probRight, 2);
+
+            $gainRatio = $splitInfo != 0 ? $informationGain / $splitInfo : 0;
+
+            if ($gainRatio > $maxGainRatio) {
+                $maxGainRatio = $gainRatio;
+                $bestThreshold = $threshold;
+            }
+        }
+
         return [
-            'information_gain' => $informationGain,
-            'gain_ratio' => $gainRatio,
+            'gain_ratio' => $maxGainRatio ?: 0,
+            'threshold' => $bestThreshold
         ];
     }
 
@@ -211,17 +254,30 @@ class ModelController extends Controller
         $entropy = $this->calculateEntropy($data);
         $bestAttribute = null;
         $maxGainRatio = -INF;
+        $bestThreshold = null;
 
         foreach ($attributes as $attribute) {
-            $result = $this->calculateInformationGain($data, $attribute, $entropy);
-            $gainRatio = $result['gain_ratio'];
+            if (in_array($attribute, $this->continuousAttributes)) {
+                $result = $this->calculateInformationGainForContinuous($data, $attribute, $entropy);
+                $gainRatio = $result['gain_ratio'];
+                $threshold = $result['threshold'];
+            } else {
+                $result = $this->calculateInformationGainForCategorical($data, $attribute, $entropy);
+                $gainRatio = $result['gain_ratio'];
+                $threshold = null;
+            }
+
             if ($gainRatio > $maxGainRatio) {
                 $maxGainRatio = $gainRatio;
                 $bestAttribute = $attribute;
+                $bestThreshold = $threshold;
             }
         }
 
-        return $bestAttribute;
+        return [
+            'attribute' => $bestAttribute,
+            'threshold' => $bestThreshold
+        ];
     }
 
     private function buildTree($data, $attributes)
@@ -237,30 +293,44 @@ class ModelController extends Controller
             return ['leaf' => array_key_first($counts)];
         }
 
-        $bestAttribute = $this->selectBestAttribute($data, $attributes);
-        if ($bestAttribute === null) {
+        $best = $this->selectBestAttribute($data, $attributes);
+        $bestAttribute = $best['attribute'];
+        $bestThreshold = $best['threshold'];
+
+        if (!$bestAttribute) {
             $counts = array_count_values($labels);
             arsort($counts);
             return ['leaf' => array_key_first($counts)];
         }
 
         $remainingAttributes = array_diff($attributes, [$bestAttribute]);
-        $tree = [
-            'attribute' => $bestAttribute,
-            'branches' => [],
-        ];
 
-        $values = array_unique(array_column($data, $bestAttribute));
-        foreach ($values as $value) {
-            $subset = array_filter($data, function ($row) use ($bestAttribute, $value) {
-                return $row[$bestAttribute] == $value;
+        if (in_array($bestAttribute, $this->continuousAttributes)) {
+            $leftSubset = array_filter($data, function ($row) use ($bestAttribute, $bestThreshold) {
+                return $row[$bestAttribute] <= $bestThreshold;
             });
-            if (empty($subset)) {
-                $counts = array_count_values($labels);
-                arsort($counts);
-                $tree['branches'][$value] = ['leaf' => array_key_first($counts)];
-            } else {
-                $tree['branches'][$value] = $this->buildTree($subset, $remainingAttributes);
+            $rightSubset = array_filter($data, function ($row) use ($bestAttribute, $bestThreshold) {
+                return $row[$bestAttribute] > $bestThreshold;
+            });
+
+            $tree = [
+                'attribute' => $bestAttribute,
+                'threshold' => $bestThreshold,
+                'branches' => [
+                    'left' => $this->buildTree($leftSubset, $remainingAttributes),
+                    'right' => $this->buildTree($rightSubset, $remainingAttributes),
+                ]
+            ];
+        } else {
+            $values = array_unique(array_column($data, $bestAttribute));
+            $tree = ['attribute' => $bestAttribute, 'branches' => []];
+            foreach ($values as $value) {
+                $subset = array_filter($data, function ($row) use ($bestAttribute, $value) {
+                    return $row[$bestAttribute] == $value;
+                });
+                $tree['branches'][$value] = empty($subset)
+                    ? ['leaf' => array_key_first(array_count_values($labels))]
+                    : $this->buildTree($subset, $remainingAttributes);
             }
         }
 
@@ -272,12 +342,18 @@ class ModelController extends Controller
         if (isset($tree['leaf'])) {
             return $tree['leaf'];
         }
+
         $attribute = $tree['attribute'];
         $value = $instance[$attribute] ?? null;
-        if (!isset($tree['branches'][$value])) {
-            // Handle unseen value; could return majority class or 0
-            return 0;
+
+        if (isset($tree['threshold'])) {
+            $branch = ($value <= $tree['threshold']) ? 'left' : 'right';
+            return $this->classify($tree['branches'][$branch], $instance);
+        } else {
+            if (!isset($tree['branches'][$value])) {
+                return 0; // Default class for unseen categories
+            }
+            return $this->classify($tree['branches'][$value], $instance);
         }
-        return $this->classify($tree['branches'][$value], $instance);
     }
 }
