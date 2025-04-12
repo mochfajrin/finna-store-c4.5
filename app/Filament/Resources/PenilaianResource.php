@@ -37,7 +37,7 @@ class PenilaianResource extends Resource
         return $form
             ->schema([
                 Select::make('pelamar_id')->searchable()->options(Pelamar::query()->join('lowongans', 'pelamars.lowongan_id', '=', 'lowongans.id')->select('pelamars.id', DB::raw("CONCAT(pelamars.id,' - ',pelamars.nama, ' - ', lowongans.judul) as pelamar"))->pluck('pelamar', 'pelamars.id'))->label("Pelamar"),
-                Checkbox::make("status")->required()->default(false)
+                Checkbox::make("status")->default(false)
             ]);
     }
 
