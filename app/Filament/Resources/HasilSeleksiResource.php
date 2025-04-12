@@ -62,16 +62,16 @@ class HasilSeleksiResource extends Resource
             ->columns([
                 TextColumn::make('id')->label("Kode Pelamar")->searchable(['pelamars.id'])->sortable(),
                 TextColumn::make("nama")->searchable()->sortable(),
-                TextColumn::make("riwayat"),
-                TextColumn::make("ktp"),
-                TextColumn::make("skck"),
-                TextColumn::make("ijazah"),
-                TextColumn::make("buta_warna"),
-                TextColumn::make("kemampuan"),
-                TextColumn::make("wawancara"),
-                TextColumn::make("total"),
+                TextColumn::make("riwayat")->sortable(),
+                TextColumn::make("ktp")->sortable(),
+                TextColumn::make("skck")->sortable(),
+                TextColumn::make("ijazah")->sortable(),
+                TextColumn::make("buta_warna")->sortable(),
+                TextColumn::make("kemampuan")->sortable(),
+                TextColumn::make("wawancara")->sortable(),
+                TextColumn::make("total")->sortable(),
                 TextColumn::make("status")->formatStateUsing(fn($state) => $state == 1 ? 'Diterima' : 'Ditolak')
-                    ->color(fn($state) => $state == 1 ? 'success' : 'danger')->badge(),
+                    ->color(fn($state) => $state == 1 ? 'success' : 'danger')->badge()->sortable(),
             ])
             ->defaultSort('id', 'desc')
             ->filters([
