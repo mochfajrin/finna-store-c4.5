@@ -33,6 +33,7 @@ Route::get("/lowongan/{lowonganId}", [LowonganController::class, "show"])->name(
 
 Route::middleware('auth')->group(function () {
     Route::get('/users/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/admin/model', ModelController::class)->name('model.index');
     Route::middleware(AdminRedirect::class)->group(function () {
         Route::get('/users', UserController::class)->name('user.index');
         Route::post('/users/update', [UserController::class, 'update'])->name('user.update');
@@ -46,6 +47,5 @@ Route::middleware('auth')->group(function () {
         Route::get('thanks', function () {
             return view('pelamar.thankyou');
         })->name('thanks');
-        Route::get('/admin/model', ModelController::class)->name('model.index');
     });
 });
