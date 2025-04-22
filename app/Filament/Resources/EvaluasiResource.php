@@ -92,7 +92,7 @@ class EvaluasiResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->modal(false),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
