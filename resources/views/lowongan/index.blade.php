@@ -1,11 +1,10 @@
 <x-app-layout>
-    <section class="bg-gray-50 py-20 antialiased dark:bg-gray-900 md:py-12">
+    <section class="py-20 antialiased dark:bg-gray-900 md:py-12">
         <div class="mt-5 mx-auto max-w-screen-xl px-4 2xl:px-0">
-            <h2 class="my-5 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Lowongan Kerja</h2>
+            <h2 class="my-5 text-xl font-bold text-white dark:text-white sm:text-2xl">Lowongan Kerja</h2>
             <div class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
                 @foreach ($lowongans as $lowongan)
-                    <div
-                        class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+                    <div class="rounded-lg border p-6 shadow-sm border-gray-700 bg-gray-800">
                         <div class="h-56 w-full">
                             <a href="{{ route('lowongan.show', ['lowonganId' => $lowongan->id]) }}">
                                 <img class="mx-auto h-full" src="{{ $lowongan->getThumbnailUrl() }}" alt="" />
@@ -13,7 +12,7 @@
                         </div>
                         <div class="pt-6">
                             <a href="{{ route('lowongan.show', ['lowonganId' => $lowongan->id]) }}"
-                                class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">
+                                class="text-lg font-semibold leading-tight text-white hover:underline dark:text-white">
                                 {{ $lowongan->judul }}
                             </a>
                             <div class="mt-4 flex items-center">

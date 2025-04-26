@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="flex h-screen items-center justify-center">
+    <div class="flex h-screen items-center justify-center bg-slate-800">
         <div>
             <div class="flex flex-col items-center space-y-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-28 w-28 text-green-600" fill="none"
@@ -22,8 +22,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <h1 class="text-4xl font-bold">Terima Kasih</h1>
-                <p>Terima Kasih Telah Mengerjakan Tes, Undangan Interview Akan Dikirimkan Ke Email Apabila Telah
+                <h1 class="text-4xl font-bold text-white">Terima Kasih</h1>
+                <p class="text-white">Terima Kasih Telah Mengerjakan Tes, Undangan Interview Akan Dikirimkan Ke Email
+                    Apabila Telah
                     Mengerjakan
                     Semua Tes</p>
                 <a href="{{ route('home') }}"

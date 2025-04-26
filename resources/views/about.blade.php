@@ -7,19 +7,19 @@
                         <div class="flex-col justify-start lg:items-start items-center gap-10 flex">
                             <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                                 <h2
-                                    class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                                    class="text-indigo-400 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                                     Visi dan Misi Perusahaan</h2>
-                                <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                                <p class="text-gray-100 text-base font-normal leading-relaxed lg:text-start text-center">
                                     Finna Store percaya bahwa suatu keberhasilan dalam perkembangan perusahaan sangat
                                     bergantung seberapa kuat dalam menjalankan pedoman Visi, Misi, dan Nilai-nilai yang
                                     ada dari dalam organisasinya.</p>
                             </div>
                             <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                                 <h2
-                                    class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                                    class="text-indigo-400 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                                     Tentang Perusahaan</h2>
                                 <p
-                                    class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                                    class="text-gray-100 text-base font-normal leading-relaxed lg:text-start text-center">
                                     Finna Store berdiri pada tanggal 01 Oktober 2015 perusahaan yang didirikan oleh Ibu
                                     Finna Agustias selaku Direktur yang berkedudukan di Kota Lamongan. Finna Store
                                     adalah perusahaan yang bergerak dibidang distributor barang Scincare yang

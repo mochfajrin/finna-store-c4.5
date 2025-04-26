@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="{{ asset('css/output.css') }}">
 </head>
 
-<body>
+<body class="bg-slate-700">
     @include('layouts.partials.header')
-    <main>
+    <main class="bg-slate-700">
         {{ $slot }}
     </main>
     @include('layouts.partials.footer')

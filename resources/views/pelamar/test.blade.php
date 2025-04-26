@@ -10,15 +10,15 @@
 </head>
 
 <body class="from-gray-100 via-gray-400 to-gray-500">
-    <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
+    <section class="bg-slate-800 py-8 antialiased dark:bg-gray-900 md:py-12">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
             <div class="mb-4 items-end justify-center space-y-4 sm:flex sm:space-y-0 md:mb-8">
                 <div>
-                    <h2 class="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Tes Buta
+                    <h2 class="mt-3 text-xl font-semibold text-white sm:text-2xl">Tes Buta
                         Warna</h2>
                 </div>
             </div>
-            <p class="font-bold my-5" id="timer"></p>
+            <p class="font-bold my-5 text-white" id="timer"></p>
             <form
                 action="{{ route('pelamar.test-submit', [
                     'colorBlindPayload' => $encryptedColorBlindTestPayload,
@@ -28,9 +28,8 @@
                 @csrf
                 <div class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
                     @for ($i = 1; $i <= 10; $i++)
-                        <div
-                            class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-                            <p class="font-bold">{{ $i }}</p>
+                        <div class="rounded-lg border p-6 shadow-sm border-gray-700 bg-gray-800">
+                            <p class="font-bold text-white">{{ $i }}</p>
                             <div class="h-56 w-full">
                                 <img class="mx-auto h-full dark:hidden"
                                     src="{{ asset("images/tes/colorblind-test-image$i.webp") }}" alt="" />
@@ -38,7 +37,7 @@
                             <div class="pt-6">
                                 <input type="text" id="jawaban-buta-warna-{{ $i }}"
                                     name="jawaban-buta-warna-{{ $i }}"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                                     placeholder="Jawab pertanyaan diatas" required />
                             </div>
                         </div>
@@ -46,16 +45,15 @@
                 </div>
                 <div class="mb-4 items-end justify-center space-y-4 sm:flex sm:space-y-0 md:mb-8">
                     <div>
-                        <h2 class="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Tes Kemampuan
+                        <h2 class="mt-3 text-xl font-semibold text-white sm:text-2xl">Tes Kemampuan
                         </h2>
                     </div>
                 </div>
                 <div class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
                     @foreach ($ability_questions as $i => $question)
-                        <div
-                            class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-                            <p class="font-bold">{{ $i + 1 }}</p>
-                            <div class="w-full">
+                        <div class="rounded-lg border p-6 shadow-sm border-gray-700 bg-gray-800">
+                            <p class="font-bold text-white">{{ $i + 1 }}</p>
+                            <div class="w-full text-white">
                                 <p>{{ $question['question'] }}</p>
                             </div>
                             <div class="pt-6">
@@ -63,10 +61,10 @@
                                     <div class="flex items-center">
                                         <input id="jawaban-kemampuan-{{ $i + 1 . $key }}" type="radio"
                                             value="{{ $key }}" name="jawaban-kemampuan-{{ $i + 1 }}"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                            class="w-4 h-4 text-white focus:ring-white ring-offset-gray-800 ring-2 bg-gray-700 border-gray-600"
                                             required>
                                         <label for="jawaban-kemampuan-{{ $i + 1 . $key }}"
-                                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $key }}.
+                                            class="ms-2 text-sm font-medium text-gray-300">{{ $key }}.
                                             {{ $options }}</label>
                                     </div>
                                 @endforeach
@@ -76,7 +74,7 @@
                 </div>
                 <div class="w-full text-center">
                     <button id="submitBtn" type="submit"
-                        class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Simpan
+                        class="rounded-lg border px-5 py-2.5 text-sm font-medium hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 dark:border-gray-600 bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-gray-700">Simpan
                         Jawaban</button>
                 </div>
             </form>

@@ -1,12 +1,13 @@
 <x-app-layout title="{{ $lowongan->judul }}">
     <div class="flex items-center justify-center p-12 mt-14">
-        <div class="mx-auto w-full max-w-[550px] bg-white">
-            <h1 class="font-extrabold text-xl mb-10">Lamaran {{ $lowongan->judul }} | {{ config('app.name') }}</h1>
+        <div class="mx-auto w-full max-w-[550px]">
+            <h1 class="font-extrabold text-xl mb-10 text-white">Lamaran {{ $lowongan->judul }} | {{ config('app.name') }}
+            </h1>
             <form class="mt-10" method="post" action="{{ route('pelamar.register', $lowongan->id) }}"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="mb-5">
-                    <label for="nama" class="mb-3 block text-base font-medium text-[#07074D]">
+                    <label for="nama" class="mb-3 block text-base font-medium text-white">
                         Nama Lengkap
                     </label>
                     <input type="text" name="nama" id="nama" placeholder="Isi nama lengkap"
@@ -17,7 +18,7 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="alamat" class="mb-3 block text-base font-medium text-[#07074D]">
+                    <label for="alamat" class="mb-3 block text-base font-medium text-white">
                         Alamat
                     </label>
                     <input type="text" name="alamat" id="alamat" placeholder="Isi alamat anda"
@@ -28,7 +29,7 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="jenis_kelamin" class="mb-3 block text-base font-medium text-[#07074D]">
+                    <label for="jenis_kelamin" class="mb-3 block text-base font-medium text-white">
                         Jenis Kelamin
                     </label>
                     <fieldset>
@@ -57,7 +58,7 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="no_telepon" class="mb-3 block text-base font-medium text-[#07074D]">
+                    <label for="no_telepon" class="mb-3 block text-base font-medium text-white">
                         Nomor Telepon
                     </label>
                     <input type="text" name="no_telepon" id="no_telepon" placeholder="Masukkan nomor telepon"
@@ -68,7 +69,7 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
+                    <label for="email" class="mb-3 block text-base font-medium text-white">
                         Alamat Email
                     </label>
                     <input type="email" name="email" id="email" placeholder="Masukkan email"
@@ -81,7 +82,7 @@
                 <div class="-mx-3 flex flex-wrap">
                     <div class="w-full px-3 sm:w-1/2">
                         <div class="mb-5">
-                            <label for="date" class="mb-3 block text-base font-medium text-[#07074D]">
+                            <label for="date" class="mb-3 block text-base font-medium text-white">
                                 Tanggal Lahir
                             </label>
                             <input type="date" name="tanggal_lahir" id="tanggal_lahir"
@@ -94,7 +95,7 @@
                     </div>
                 </div>
                 <div class="mb-5">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="foto">Unggah
+                    <label class="block mb-2 text-sm font-medium text-white dark:text-white" for="foto">Unggah
                         Foto Terbaru</label>
                     <input
                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -106,8 +107,7 @@
                 </div>
                 @if ($isIjazah)
                     <div class="mb-5">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            for="ijazah">Unggah
+                        <label class="block mb-2 text-sm font-medium text-white dark:text-white" for="ijazah">Unggah
                             Ijazah Pendidikan Terakhir</label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -120,7 +120,7 @@
                 @endif
                 @if ($isKtp)
                     <div class="mb-5">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        <label class="block mb-2 text-sm font-medium text-white dark:text-white"
                             for="user_avatar">Unggah
                             KTP</label>
                         <input
@@ -134,8 +134,7 @@
                 @endif
                 @if ($isSkck)
                     <div class="mb-5">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            for="skck">Unggah
+                        <label class="block mb-2 text-sm font-medium text-white dark:text-white" for="skck">Unggah
                             SKCK Aktif</label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -148,8 +147,7 @@
                 @endif
                 @if ($isRiwayat)
                     <div class="mb-5">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            for="riwayat">Unggah
+                        <label class="block mb-2 text-sm font-medium text-white dark:text-white" for="riwayat">Unggah
                             Riwayat (CV) </label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"

@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\DB;
 
 class PenilaianResource extends Resource
 {
+    protected static bool $shouldRegisterNavigation = false;
     protected static ?string $model = Penilaian::class;
     protected static ?string $modelLabel = 'Penilaian';
     protected static ?string $pluralModelLabel = 'Penilaian';
